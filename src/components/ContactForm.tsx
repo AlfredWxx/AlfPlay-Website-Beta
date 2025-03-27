@@ -28,7 +28,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
     };
 
     try {
-      const response = await fetch('http://localhost:3001/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,6 +43,9 @@ export default function ContactForm({ onClose }: ContactFormProps) {
 
       setSubmitStatus('success');
       form.reset();
+      setTimeout(() => {
+        onClose();
+      }, 2000);
     } catch (error) {
       console.error('Error sending message:', error);
       setSubmitStatus('error');
@@ -75,7 +78,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                 type="text"
                 name="organization"
                 placeholder="Organization"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 placeholder-gray-400"
+                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400"
               />
             </div>
 
@@ -85,7 +88,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                 name="fullName"
                 required
                 placeholder="Full Name *"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 placeholder-gray-400"
+                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400"
               />
             </div>
 
@@ -95,7 +98,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                 name="phone"
                 required
                 placeholder="Phone *"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 placeholder-gray-400"
+                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400"
               />
             </div>
             
@@ -105,7 +108,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                 name="email"
                 required
                 placeholder="Email *"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 placeholder-gray-400"
+                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400"
               />
             </div>
 
@@ -114,7 +117,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                 type="text"
                 name="address"
                 placeholder="Address"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 placeholder-gray-400"
+                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400"
               />
             </div>
             
@@ -124,7 +127,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                 rows={4}
                 required
                 placeholder="Message *"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 placeholder-gray-400"
+                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400"
               ></textarea>
             </div>
 
@@ -145,7 +148,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors disabled:bg-blue-400"
+              className="inline-flex items-center bg-alfblue text-white px-4 py-2 rounded-md hover:bg-alfgreen transition-colors disabled:bg-gray-400"
             >
               {isSubmitting ? 'Sending...' : 'Submit'}
               <ArrowRight className="ml-2 h-4 w-4" />

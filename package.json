@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@types/nodemailer": "^6.4.17",
+    "@vercel/node": "^5.1.14",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
@@ -31,6 +31,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "@types/node": "^22.13.13",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
