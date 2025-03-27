@@ -28,21 +28,27 @@ export default function ContactForm({ onClose }: ContactFormProps) {
     };
 
     try {
-      const apiUrl = import.meta.env.DEV ? '' : 'https://alfplay.com';
-      const response = await fetch(`${apiUrl}/api/contact`, {
+      const baseUrl = window.location.origin;
+      console.log('Sending request to:', `${baseUrl}/api/contact`);
+      console.log('Request data:', data);
+      
+      const response = await fetch(`${baseUrl}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify(data),
       });
 
+      console.log('Response status:', response.status);
+      const responseData = await response.json().catch(() => null);
+      console.log('Response data:', responseData);
+
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to send message');
+        throw new Error(responseData?.message || `HTTP error! status: ${response.status}`);
       }
 
-      const responseData = await response.json();
       setSubmitStatus('success');
       form.reset();
       setTimeout(onClose, 2000);
