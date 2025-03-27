@@ -1,0 +1,101 @@
+# AlfPlay 网站部署和更新指南
+
+## 一、项目信息
+- GitHub 仓库：https://github.com/AlfredWxx/AlfPlay-Website-Beta
+- Vercel 部署地址：https://alfplay-website-beta.vercel.app
+- 自定义域名：alfplay.com
+
+## 二、本地开发环境设置
+1. 安装依赖
+npm install
+
+2. 启动开发服务器
+npm run dev
+- 访问地址：http://localhost:5173
+- 支持实时预览和热更新
+
+3. 构建生产版本
+npm run build
+
+## 三、代码更新流程
+1. 获取最新代码
+git pull
+
+2. 修改代码
+- 在本地修改代码
+- 保存更改
+
+3. 提交更改
+# 查看修改的文件
+git status
+
+# 添加修改的文件
+git add .
+
+# 提交更改（替换引号中的内容为您的修改说明）
+git commit -m "修改说明"
+
+# 推送到 GitHub
+git push
+
+4. 自动部署
+- 推送代码后，Vercel 会自动部署更新
+- 部署完成后，网站会自动更新
+
+## 四、域名管理
+1. DNS 设置（在 Namecheap）
+- A 记录：
+  - Type: A Record
+  - Host: @
+  - Value: 76.76.21.21
+  - TTL: Automatic
+
+- CNAME 记录：
+  - Type: CNAME Record
+  - Host: www
+  - Value: cname.vercel-dns.com
+  - TTL: Automatic
+
+2. Vercel 域名设置
+- 在项目设置中配置 alfplay.com
+- 等待 DNS 记录生效（可能需要几分钟到几小时）
+
+## 五、常见问题处理
+1. 代码推送失败
+- 运行 git pull 获取最新代码
+- 解决冲突后重新提交
+
+2. 部署失败
+- 检查 Vercel 部署日志
+- 确保代码没有编译错误
+- 检查环境变量配置
+
+3. 域名问题
+- 检查 DNS 记录是否正确
+- 等待 DNS 传播完成
+- 确认域名所有权
+
+## 六、重要命令参考
+# 开发相关
+npm run dev      # 启动开发服务器
+npm run build    # 构建生产版本
+
+# Git 相关
+git status       # 查看文件状态
+git add .        # 添加修改的文件
+git commit -m "" # 提交更改
+git push         # 推送到远程仓库
+git pull         # 获取最新代码
+
+## 七、注意事项
+1. 重要修改前先备份代码
+2. 提交信息要清晰描述修改内容
+3. 定期检查网站性能和错误日志
+4. 保持依赖包更新
+5. 定期备份重要数据
+
+## 八、联系方式
+- 如果遇到问题，可以：
+  1. 查看 Vercel 部署日志
+  2. 检查 GitHub 仓库状态
+  3. 联系技术支持 
