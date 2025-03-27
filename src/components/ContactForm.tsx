@@ -28,7 +28,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
     };
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || '';
+      const apiUrl = import.meta.env.DEV ? '' : 'https://alfplay.com';
       const response = await fetch(`${apiUrl}/api/contact`, {
         method: 'POST',
         headers: {

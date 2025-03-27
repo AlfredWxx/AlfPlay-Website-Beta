@@ -7,6 +7,7 @@
     "start": "react-scripts start",
     "dev": "vite",
     "build": "tsc && vite build",
+    "vercel-build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "build:server": "tsc src/server/*.ts --outDir dist/server",
