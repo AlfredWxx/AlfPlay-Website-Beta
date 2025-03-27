@@ -4,9 +4,19 @@ import ContactForm from './ContactForm';
 
 export default function Header() {
   const [showContact, setShowContact] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleClose = () => {
+    setIsClosing(true);
+    // 等待动画完成后再隐藏组件
+    setTimeout(() => {
+      setShowContact(false);
+      setIsClosing(false);
+    }, 300); // 动画持续时间为300ms
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-transparent z-50">
@@ -50,12 +60,18 @@ export default function Header() {
         <>
           {/* 遮罩层 */}
           <div 
-            className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
-            onClick={() => setShowContact(false)}
+            className={`fixed inset-0 bg-black transition-opacity duration-300 ${
+              isClosing ? 'bg-opacity-0' : 'bg-opacity-50'
+            }`}
+            onClick={handleClose}
           />
           {/* ContactForm 容器 */}
-          <div className="fixed top-0 right-0 h-full w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-lg transform transition-transform z-50">
-            <ContactForm onClose={() => setShowContact(false)} />
+          <div 
+            className={`fixed top-0 right-0 h-full w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+              isClosing ? 'translate-x-full' : 'translate-x-0'
+            } z-50`}
+          >
+            <ContactForm onClose={handleClose} />
           </div>
         </>
       )}

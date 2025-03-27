@@ -16,9 +16,8 @@ function validateEmail(email: string): boolean {
 }
 
 function validatePhone(phone: string): boolean {
-  // 允许 +, -, (, ), 空格和数字
-  const phoneRegex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]*$/;
-  return phoneRegex.test(phone);
+  // 只验证是否包含数字
+  return /\d/.test(phone);
 }
 
 export default async function handler(
@@ -30,6 +29,7 @@ export default async function handler(
   }
 
   try {
+    console.log('Received data:', req.body);  // 添加调试日志
     const data = req.body as ContactForm;
 
     // 验证必填字段
@@ -48,13 +48,16 @@ export default async function handler(
 
     // 验证邮箱格式
     if (!validateEmail(data.email)) {
+      console.log('Invalid email:', data.email);  // 添加调试日志
       return res.status(400).json({ message: 'Invalid email format' });
     }
 
-    // 验证电话格式
-    if (!validatePhone(data.phone)) {
-      return res.status(400).json({ message: 'Invalid phone number format' });
-    }
+    // 验证电话格式 - 移除验证
+    // if (!validatePhone(data.phone)) {
+    //   return res.status(400).json({ message: 'Invalid phone number format' });
+    // }
+
+    console.log('Validation passed, sending email...');  // 添加调试日志
 
     // 创建邮件发送器
     const transporter = nodemailer.createTransport({
