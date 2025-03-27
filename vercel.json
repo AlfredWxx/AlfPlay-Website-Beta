@@ -9,11 +9,7 @@
     }
   ],
   "routes": [
-    { 
-      "src": "/api/contact",
-      "status": 308,
-      "headers": { "Location": "/api/contact/" }
-    },
+    { "src": "/api/contact/?", "dest": "/api/contact" },
     { "src": "/api/(.*)", "dest": "/api/$1" },
     { "handle": "filesystem" },
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
