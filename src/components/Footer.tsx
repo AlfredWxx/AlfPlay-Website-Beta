@@ -9,6 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">AlfPlay</h3>
+            <img src="/images/AlfPlayLogo-removebg.png" alt="AlfPlay Logo" className="h-16 w-auto mb-4" />
             <p className="text-gray-400">Innovating the future of play</p>
           </div>
           

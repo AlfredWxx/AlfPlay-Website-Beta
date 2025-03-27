@@ -69,7 +69,7 @@ export default function Home() {
   };
 
   return (
-    <div className="pt-16">
+    <div className="relative">
       {/* Welcome Modal */}
       {showWelcomeModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -91,7 +91,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <div 
-        className="min-h-[90vh] bg-cover bg-center flex items-center relative"
+        className="min-h-screen bg-cover bg-center flex items-center relative"
         style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)',
           backgroundBlendMode: 'overlay',
@@ -102,7 +102,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
             Making Learning <br />
-            <span className="text-yellow-400">Fun and Exciting</span>
+            <span className="text-alfyellow">Fun and Exciting</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white drop-shadow-lg">
             Discover our innovative educational toys that inspire creativity and learning
@@ -110,14 +110,14 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => navigate('/products')}
-              className="bg-yellow-500 text-white px-8 py-3 rounded-md text-lg hover:bg-yellow-600 transition-colors inline-flex items-center justify-center"
+              className="bg-alfyellow text-white px-8 py-3 rounded-md text-lg hover:bg-alfblue transition-colors inline-flex items-center justify-center"
             >
               Explore Products
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <button
               onClick={() => navigate('/about')}
-              className="bg-yellow-500 text-white px-8 py-3 rounded-md text-lg hover:bg-yellow-600 transition-colors"
+              className="bg-alfyellow text-white px-8 py-3 rounded-md text-lg hover:bg-alfblue transition-colors"
             >
               Learn More
             </button>
@@ -126,21 +126,21 @@ export default function Home() {
       </div>
 
       {/* Features Section */}
-      <div className="py-16 bg-yellow-50">
+      <div className="py-16 bg-alfyellow/10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6">
-              <Star className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
+              <Star className="h-12 w-12 text-alfyellow mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Premium Quality</h3>
               <p className="text-gray-600">Safe and durable toys for endless fun</p>
             </div>
             <div className="text-center p-6">
-              <Users className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
+              <Users className="h-12 w-12 text-alfyellow mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Child-Friendly</h3>
               <p className="text-gray-600">Designed specifically for young learners</p>
             </div>
             <div className="text-center p-6">
-              <Award className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
+              <Award className="h-12 w-12 text-alfyellow mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Educational Value</h3>
               <p className="text-gray-600">Promotes learning through play</p>
             </div>
@@ -245,21 +245,21 @@ export default function Home() {
             {showLeftButton && (
               <button
                 onClick={() => scrollProducts('left')}
-                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-yellow-400 transition-colors"
+                className={`absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-alfyellow transition-colors ${
+                  showLeftButton ? 'opacity-100' : 'opacity-0'
+                }`}
               >
-                <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
+                <ChevronLeft className="h-6 w-6" />
               </button>
             )}
             {showRightButton && (
               <button
                 onClick={() => scrollProducts('right')}
-                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-yellow-400 transition-colors"
+                className={`absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-alfyellow transition-colors ${
+                  showRightButton ? 'opacity-100' : 'opacity-0'
+                }`}
               >
-                <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                <ChevronRight className="h-6 w-6" />
               </button>
             )}
           </div>

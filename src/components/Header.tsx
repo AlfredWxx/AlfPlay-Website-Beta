@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Play } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 export default function Header() {
@@ -10,36 +9,36 @@ export default function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+    <header className="fixed top-0 left-0 right-0 bg-transparent z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <Play className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold">AlfPlay</span>
+        <div className="flex items-center justify-between h-20">
+          <Link to="/" className="flex items-center space-x-3">
+            <img src="/images/AlfPlayLogo-removebg.png" alt="AlfPlay Logo" className="h-20 w-auto" />
+            <span className="text-2xl font-bold text-white drop-shadow-lg">AlfPlay</span>
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               to="/planning"
-              className={`${isActive('/planning') ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-500 transition-colors`}
+              className={`${isActive('/planning') ? 'text-alfyellow' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
             >
               Planning
             </Link>
             <Link
               to="/products"
-              className={`${isActive('/products') ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-500 transition-colors`}
+              className={`${isActive('/products') ? 'text-alfyellow' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
             >
               Products
             </Link>
             <Link
               to="/about"
-              className={`${isActive('/about') ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-500 transition-colors`}
+              className={`${isActive('/about') ? 'text-alfyellow' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
             >
               About
             </Link>
             <button
               onClick={() => setShowContact(true)}
-              className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-colors"
+              className="bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-alfblue transition-colors text-lg shadow-lg"
             >
               Get in touch
             </button>
