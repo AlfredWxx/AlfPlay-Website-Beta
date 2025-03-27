@@ -33,10 +33,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Access-Control-Allow-Origin': '*'
         },
-        credentials: 'same-origin',
         body: JSON.stringify(data),
       });
 
