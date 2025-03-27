@@ -26,10 +26,11 @@ export default defineConfig(({ mode }) => {
       proxy: {
         '/api': {
           target: mode === 'development' 
-            ? 'http://localhost:3001'
-            : 'https://alfplay.com',
+            ? 'http://localhost:3001/'
+            : 'https://alfplay.com/',
           changeOrigin: true,
           secure: false,
+          rewrite: (path) => path.replace(/^\/api/, '/api/'),
         },
       },
     },
