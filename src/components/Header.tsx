@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Globe } from 'lucide-react';
 
 interface HeaderProps {
   onOpenContact: () => void;
+  onOpenLanguage: () => void;
 }
 
-export default function Header({ onOpenContact }: HeaderProps) {
+export default function Header({ onOpenContact, onOpenLanguage }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -77,6 +79,14 @@ export default function Header({ onOpenContact }: HeaderProps) {
             >
               About
             </Link>
+            <button
+              onClick={onOpenLanguage}
+              className={`p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 ${
+                isScrolled ? 'text-gray-800' : 'text-white'
+              }`}
+            >
+              <Globe className="h-6 w-6" />
+            </button>
             <button
               onClick={onOpenContact}
               className="bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-alfblue transition-colors text-lg shadow-lg z-50"

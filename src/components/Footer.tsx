@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-600 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -33,19 +33,19 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-alfblue">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-alfblue">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-alfblue">
                 <Twitter className="h-6 w-6" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-alfblue">
                 <Youtube className="h-6 w-6" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-alfblue">
                 <Linkedin className="h-6 w-6" />
               </a>
             </div>
