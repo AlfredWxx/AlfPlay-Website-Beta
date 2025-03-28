@@ -1,80 +1,91 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import ContactForm from './ContactForm';
 
-export default function Header() {
-  const [showContact, setShowContact] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
+interface HeaderProps {
+  onOpenContact: () => void;
+}
+
+export default function Header({ onOpenContact }: HeaderProps) {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
 
-  const handleClose = () => {
-    setIsClosing(true);
-    // 等待动画完成后再隐藏组件
-    setTimeout(() => {
-      setShowContact(false);
-      setIsClosing(false);
-    }, 300); // 动画持续时间为300ms
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPercentage = (currentScrollY / (documentHeight - windowHeight)) * 100;
+      
+      // 检查是否在顶部5%范围内
+      if (scrollPercentage <= 5) {
+        setIsScrolled(false);
+        setIsVisible(true);
+      } else {
+        setIsScrolled(true);
+        // 控制header的显示/隐藏
+        if (currentScrollY > lastScrollY) {
+          setIsVisible(false);
+        } else {
+          setIsVisible(true);
+        }
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-transparent z-50">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+      } ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3">
             <img src="/images/AlfPlayLogo-removebg.png" alt="AlfPlay Logo" className="h-20 w-auto" />
-            <span className="text-2xl font-bold text-white drop-shadow-lg">AlfPlay</span>
+            <span className={`text-2xl font-bold drop-shadow-lg ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
+              AlfPlay
+            </span>
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               to="/planning"
-              className={`${isActive('/planning') ? 'text-alfyellow' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
+              className={`${isActive('/planning') ? 'text-alfyellow' : isScrolled ? 'text-gray-800' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
             >
               Planning
             </Link>
             <Link
               to="/products"
-              className={`${isActive('/products') ? 'text-alfyellow' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
+              className={`${isActive('/products') ? 'text-alfyellow' : isScrolled ? 'text-gray-800' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
             >
               Products
             </Link>
             <Link
               to="/about"
-              className={`${isActive('/about') ? 'text-alfyellow' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
+              className={`${isActive('/about') ? 'text-alfyellow' : isScrolled ? 'text-gray-800' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
             >
               About
             </Link>
             <button
-              onClick={() => setShowContact(true)}
-              className="bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-alfblue transition-colors text-lg shadow-lg"
+              onClick={onOpenContact}
+              className="bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-alfblue transition-colors text-lg shadow-lg z-50"
             >
               Get in touch
             </button>
           </nav>
         </div>
       </div>
-      
-      {showContact && (
-        <>
-          {/* 遮罩层 */}
-          <div 
-            className={`fixed inset-0 bg-black transition-opacity duration-300 ${
-              isClosing ? 'bg-opacity-0' : 'bg-opacity-50'
-            }`}
-            onClick={handleClose}
-          />
-          {/* ContactForm 容器 */}
-          <div 
-            className={`fixed top-0 right-0 h-full w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
-              isClosing ? 'translate-x-full' : 'translate-x-0'
-            } z-50`}
-          >
-            <ContactForm onClose={handleClose} />
-          </div>
-        </>
-      )}
     </header>
   );
 }

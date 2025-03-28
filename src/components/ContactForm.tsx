@@ -66,10 +66,10 @@ export default function ContactForm({ onClose }: ContactFormProps) {
   };
 
   return (
-    <div className="relative">
+    <div className="relative h-full overflow-y-auto">
       <button 
         onClick={onClose} 
-        className="absolute top-6 right-6 text-gray-500 hover:text-gray-700 z-50 transition-colors duration-200"
+        className="absolute top-6 right-6 text-gray-500 hover:text-gray-700 z-[80] transition-colors duration-200"
       >
         <X className="h-6 w-6" />
       </button>
