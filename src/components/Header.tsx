@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Globe } from 'lucide-react';
+import { Globe, Menu } from 'lucide-react';
 
 interface HeaderProps {
   onOpenContact: () => void;
   onOpenLanguage: () => void;
+  onOpenMobileMenu: () => void;
 }
 
-export default function Header({ onOpenContact, onOpenLanguage }: HeaderProps) {
+export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -94,6 +95,26 @@ export default function Header({ onOpenContact, onOpenLanguage }: HeaderProps) {
               Get in touch
             </button>
           </nav>
+
+          {/* 移动端按钮 */}
+          <div className="flex items-center space-x-4 md:hidden">
+            <button
+              onClick={onOpenLanguage}
+              className={`p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 ${
+                isScrolled ? 'text-gray-800' : 'text-white'
+              }`}
+            >
+              <Globe className="h-6 w-6" />
+            </button>
+            <button
+              onClick={onOpenMobileMenu}
+              className={`p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 ${
+                isScrolled ? 'text-gray-800' : 'text-white'
+              }`}
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
         </div>
       </div>
     </header>
