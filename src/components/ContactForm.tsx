@@ -130,6 +130,16 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                 className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
               />
             </div>
+
+            <div>
+              <input
+                type="text"
+                name="postalCode"
+                required
+                placeholder="Postal code *"
+                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
+              />
+            </div>
             
             <div>
               <textarea

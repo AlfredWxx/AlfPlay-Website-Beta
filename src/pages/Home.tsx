@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Star, Users, Award, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import ContactSection from '../components/ContactSection';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -265,6 +266,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Contact Section */}
+      <ContactSection />
     </div>
   );
 }
