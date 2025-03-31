@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alfplay.com/sitemap.xml 
