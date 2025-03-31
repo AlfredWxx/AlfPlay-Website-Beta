@@ -83,73 +83,63 @@ export default function ContactForm({ onClose }: ContactFormProps) {
           </div>
           
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <input
-                type="text"
-                name="organization"
-                placeholder="Organization"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
-              />
-            </div>
+          <div>
+                <input
+                  type="text"
+                  name="organization"
+                  placeholder="Organization"
+                  className="mt-1 block w-full h-14 rounded-lg shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
+                />
+              </div>
 
-            <div>
-              <input
-                type="text"
-                name="fullName"
-                required
-                placeholder="Full Name *"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
-              />
-            </div>
+              <div>
+                <input
+                  type="text"
+                  name="fullName"
+                  required
+                  placeholder="Full Name *"
+                  className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
+                />
+              </div>
 
-            <div>
-              <input
-                type="tel"
-                name="phone"
-                required
-                placeholder="Phone *"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
-              />
-            </div>
-            
-            <div>
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="Email *"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
-              />
-            </div>
+              <div>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  placeholder="Phone *"
+                  className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
+                />
+              </div>
+              
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Email *"
+                  className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
+                />
+              </div>
 
-            <div>
-              <input
-                type="text"
-                name="address"
-                placeholder="Address"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
-              />
-            </div>
-
-            <div>
-              <input
-                type="text"
-                name="postalCode"
-                required
-                placeholder="Postal code *"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
-              />
-            </div>
-            
-            <div>
-              <textarea
-                name="message"
-                rows={4}
-                required
-                placeholder="Message *"
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
-              ></textarea>
-            </div>
+              <div>
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Address"
+                  className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
+                />
+              </div>
+              
+              <div>
+                <textarea
+                  name="message"
+                  rows={4}
+                  required
+                  placeholder="Message *"
+                  className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
+                ></textarea>
+              </div>
 
             {submitStatus === 'success' && (
               <div className="text-green-600 text-sm opacity-100 transition-opacity duration-200">

@@ -56,7 +56,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-start gap-12">
           {/* 标题部分 - 在小屏幕上占据全宽 */}
@@ -77,7 +77,7 @@ export default function ContactSection() {
                   type="text"
                   name="organization"
                   placeholder="Organization"
-                  className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
+                  className="mt-1 block w-full h-14 rounded-lg shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
 
@@ -87,7 +87,7 @@ export default function ContactSection() {
                   name="fullName"
                   required
                   placeholder="Full Name *"
-                  className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
+                  className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
 
@@ -97,7 +97,7 @@ export default function ContactSection() {
                   name="phone"
                   required
                   placeholder="Phone *"
-                  className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
+                  className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
               
@@ -107,7 +107,7 @@ export default function ContactSection() {
                   name="email"
                   required
                   placeholder="Email *"
-                  className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
+                  className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
 
@@ -116,7 +116,7 @@ export default function ContactSection() {
                   type="text"
                   name="address"
                   placeholder="Address"
-                  className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
+                  className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
               
@@ -126,7 +126,7 @@ export default function ContactSection() {
                   rows={4}
                   required
                   placeholder="Message *"
-                  className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200"
+                  className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 ></textarea>
               </div>
 

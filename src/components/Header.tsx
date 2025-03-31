@@ -47,13 +47,13 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+        isScrolled ? 'bg-white' : 'bg-transparent'
       } ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-28">
           <Link to="/" className="flex items-center space-x-3">
             <img src="/images/AlfPlayLogo-removebg.png" alt="AlfPlay Logo" className="h-20 w-auto" />
             <span className={`text-2xl font-bold drop-shadow-lg ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
