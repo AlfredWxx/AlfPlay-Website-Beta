@@ -92,7 +92,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <div 
-        className="h-[80vh] bg-cover bg-center flex items-center relative"
+        className="h-[78vh] bg-cover bg-center flex items-center relative"
         style={{
           backgroundImage: 'url(/images/project-jurong-lake-gardens-playground-main.jpg)',
           backgroundBlendMode: 'overlay',
@@ -127,7 +127,7 @@ export default function Home() {
       </div>
 
       {/* Features Section */}
-      <div className="py-12 bg-alfyellow/10">
+      <div className="py-6 bg-white">
         <div className="container mx-auto px-2">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6">

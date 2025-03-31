@@ -25,6 +25,10 @@ export default {
         'alfgreen': '#a5ddd0',
         // 您可以继续添加更多自定义颜色
       },
+      fontFamily: {
+        sans: ['Roboto Condensed', 'sans-serif'],  // 设置为默认字体
+        roboto: ['Roboto Condensed', 'sans-serif'], // 保留这个作为备选
+      },
     },
   },
   plugins: [],
