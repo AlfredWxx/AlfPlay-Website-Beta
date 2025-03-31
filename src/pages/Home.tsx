@@ -92,9 +92,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <div 
-        className="min-h-screen bg-cover bg-center flex items-center relative"
+        className="h-[80vh] bg-cover bg-center flex items-center relative"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)',
+          backgroundImage: 'url(/images/project-jurong-lake-gardens-playground-main.jpg)',
           backgroundBlendMode: 'overlay',
           backgroundColor: 'rgba(0, 0, 0, 0.2)'
         }}
@@ -111,14 +111,14 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => navigate('/products')}
-              className="bg-alfyellow text-white px-8 py-3 rounded-md text-lg hover:bg-alfblue transition-colors inline-flex items-center justify-center"
+              className="bg-alfyellow text-white px-8 py-3 rounded-md text-lg hover:bg-white hover:text-alfyellow transition-colors inline-flex items-center justify-center"
             >
               Explore Products
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <button
               onClick={() => navigate('/about')}
-              className="bg-alfyellow text-white px-8 py-3 rounded-md text-lg hover:bg-alfblue transition-colors"
+              className="bg-alfyellow text-white px-8 py-3 rounded-md text-lg hover:bg-white hover:text-alfyellow transition-colors"
             >
               Learn More
             </button>
@@ -127,21 +127,21 @@ export default function Home() {
       </div>
 
       {/* Features Section */}
-      <div className="py-16 bg-alfyellow/10">
-        <div className="container mx-auto px-4">
+      <div className="py-12 bg-alfyellow/10">
+        <div className="container mx-auto px-2">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6">
-              <Star className="h-12 w-12 text-alfyellow mx-auto mb-4" />
+              <Star className="h-8 w-12 text-alfyellow mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Premium Quality</h3>
               <p className="text-gray-600">Safe and durable toys for endless fun</p>
             </div>
             <div className="text-center p-6">
-              <Users className="h-12 w-12 text-alfyellow mx-auto mb-4" />
+              <Users className="h-8 w-12 text-alfyellow mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Child-Friendly</h3>
               <p className="text-gray-600">Designed specifically for young learners</p>
             </div>
             <div className="text-center p-6">
-              <Award className="h-12 w-12 text-alfyellow mx-auto mb-4" />
+              <Award className="h-8 w-12 text-alfyellow mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Educational Value</h3>
               <p className="text-gray-600">Promotes learning through play</p>
             </div>

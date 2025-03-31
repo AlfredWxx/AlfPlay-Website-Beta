@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import ContactForm from './components/ContactForm';
 import LanguageForm from './components/LanguageForm';
 import MobileMenu from './components/MobileMenu';
+import SearchForm from './components/SearchForm';
 import Home from './pages/Home';
 import Planning from './pages/Planning';
 import Products from './pages/Products';
@@ -14,9 +15,11 @@ function App() {
   const [showContact, setShowContact] = useState(false);
   const [showLanguage, setShowLanguage] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [isLanguageClosing, setIsLanguageClosing] = useState(false);
   const [isMobileMenuClosing, setIsMobileMenuClosing] = useState(false);
+  const [isSearchClosing, setIsSearchClosing] = useState(false);
 
   // 添加全局样式
   useEffect(() => {
@@ -34,7 +37,7 @@ function App() {
 
   // 控制页面滚动
   useEffect(() => {
-    if (showContact || showLanguage || showMobileMenu) {
+    if (showContact || showLanguage || showMobileMenu || showSearch) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -42,7 +45,7 @@ function App() {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [showContact, showLanguage, showMobileMenu]);
+  }, [showContact, showLanguage, showMobileMenu, showSearch]);
 
   const handleOpenContact = () => {
     setShowContact(true);
@@ -83,6 +86,19 @@ function App() {
     }, 300);
   };
 
+  const handleOpenSearch = () => {
+    setShowSearch(true);
+    setIsSearchClosing(false);
+  };
+
+  const handleCloseSearch = () => {
+    setIsSearchClosing(true);
+    setTimeout(() => {
+      setShowSearch(false);
+      setIsSearchClosing(false);
+    }, 300);
+  };
+
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
@@ -90,6 +106,7 @@ function App() {
           onOpenContact={handleOpenContact} 
           onOpenLanguage={handleOpenLanguage}
           onOpenMobileMenu={handleOpenMobileMenu}
+          onOpenSearch={handleOpenSearch}
         />
         <main className="flex-grow">
           <Routes>
@@ -157,6 +174,24 @@ function App() {
                 isActive={(path) => location.pathname === path}
                 isScrolled={window.scrollY > 0}
               />
+            </div>
+          </>
+        )}
+
+        {showSearch && (
+          <>
+            <div 
+              className={`fixed inset-0 bg-black transition-opacity duration-300 ${
+                isSearchClosing ? 'bg-opacity-0' : 'bg-opacity-50'
+              } z-[60]`}
+              onClick={handleCloseSearch}
+            />
+            <div 
+              className={`fixed top-0 left-0 w-full h-[20vh] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+                isSearchClosing ? '-translate-y-full' : 'translate-y-0'
+              } z-[70]`}
+            >
+              <SearchForm onClose={handleCloseSearch} />
             </div>
           </>
         )}

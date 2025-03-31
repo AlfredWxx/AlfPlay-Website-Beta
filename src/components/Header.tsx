@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Globe, Menu } from 'lucide-react';
+import { Globe, Menu, Search } from 'lucide-react';
 
 interface HeaderProps {
   onOpenContact: () => void;
   onOpenLanguage: () => void;
   onOpenMobileMenu: () => void;
+  onOpenSearch: () => void;
 }
 
-export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu }: HeaderProps) {
+export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu, onOpenSearch }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -47,13 +48,13 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white' : 'bg-transparent'
+        isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
       } ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-28">
+        <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3">
             <img src="/images/AlfPlayLogo-removebg.png" alt="AlfPlay Logo" className="h-20 w-auto" />
             <span className={`text-2xl font-bold drop-shadow-lg ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
@@ -81,8 +82,16 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
               About
             </Link>
             <button
+              onClick={onOpenSearch}
+              className={`p-2 rounded-full hover:bg-alfyellow transition-colors duration-200 ${
+                isScrolled ? 'text-gray-800' : 'text-white'
+              }`}
+            >
+              <Search className="h-6 w-6" />
+            </button>
+            <button
               onClick={onOpenLanguage}
-              className={`p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 ${
+              className={`p-2 rounded-full hover:bg-alfyellow transition-colors duration-200 ${
                 isScrolled ? 'text-gray-800' : 'text-white'
               }`}
             >
@@ -90,14 +99,22 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
             </button>
             <button
               onClick={onOpenContact}
-              className="bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-alfblue transition-colors text-lg shadow-lg z-50"
+              className="bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfyellow transition-colors text-lg shadow-lg z-50"
             >
-              Get in touch
+              Let's Talk
             </button>
           </nav>
 
           {/* 移动端按钮 */}
           <div className="flex items-center space-x-4 md:hidden">
+            <button
+              onClick={onOpenSearch}
+              className={`p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 ${
+                isScrolled ? 'text-gray-800' : 'text-white'
+              }`}
+            >
+              <Search className="h-6 w-6" />
+            </button>
             <button
               onClick={onOpenLanguage}
               className={`p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 ${
