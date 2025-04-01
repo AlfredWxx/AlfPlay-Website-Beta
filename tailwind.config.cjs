@@ -28,6 +28,7 @@ export default {
       fontFamily: {
         sans: ['Roboto Condensed', 'sans-serif'],  // 设置为默认字体
         roboto: ['Roboto Condensed', 'sans-serif'], // 保留这个作为备选
+        bingar: ['Bingar', 'sans-serif'], // 添加 Bingar 字体
       },
     },
   },

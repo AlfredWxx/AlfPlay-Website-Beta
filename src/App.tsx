@@ -187,7 +187,7 @@ function App() {
               onClick={handleCloseSearch}
             />
             <div 
-              className={`fixed top-0 left-0 w-full h-[20vh] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+              className={`fixed top-0 left-0 w-full h-[35vh] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
                 isSearchClosing ? '-translate-y-full' : 'translate-y-0'
               } z-[70]`}
             >
