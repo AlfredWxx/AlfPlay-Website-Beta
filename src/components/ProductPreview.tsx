@@ -9,8 +9,8 @@ interface ProductPreviewProps {
 export default function ProductPreview({ isVisible, onMouseLeave }: ProductPreviewProps) {
   return (
     <div 
-      className={`fixed top-16 left-0 w-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out pointer-events-none opacity-0 z-30 ${
-        isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full'
+      className={`fixed top-16 left-0 w-full bg-white shadow-lg transform transition-all duration-300 ease-in-out pointer-events-none opacity-0 z-30 ${
+        isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0'
       }`}
       onMouseLeave={onMouseLeave}
     >
@@ -28,7 +28,7 @@ export default function ProductPreview({ isVisible, onMouseLeave }: ProductPrevi
               浏览产品
             </Link>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-6 animate-fadeIn">
             <h2 className="text-2xl font-bold text-gray-800">特色功能</h2>
             <p className="text-gray-600">
               创新的游戏机制，精美的视觉效果，让您的游戏体验更加精彩。

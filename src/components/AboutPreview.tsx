@@ -9,8 +9,8 @@ interface AboutPreviewProps {
 export default function AboutPreview({ isVisible, onMouseLeave }: AboutPreviewProps) {
   return (
     <div 
-    className={`fixed top-16 left-0 w-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out pointer-events-none opacity-0 z-30 ${
-        isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full'
+      className={`fixed top-16 left-0 w-full bg-white shadow-lg transform transition-all duration-300 ease-in-out pointer-events-none opacity-0 z-30 ${
+        isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0'
       }`}
       onMouseLeave={onMouseLeave}
     >
@@ -28,7 +28,7 @@ export default function AboutPreview({ isVisible, onMouseLeave }: AboutPreviewPr
               了解更多
             </Link>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-6 animate-fadeIn">
             <h2 className="text-2xl font-bold text-gray-800">我们的使命</h2>
             <p className="text-gray-600">
               通过创新和技术，为全球玩家带来独特的游戏体验，让每个人都能在游戏中找到属于自己的快乐。
