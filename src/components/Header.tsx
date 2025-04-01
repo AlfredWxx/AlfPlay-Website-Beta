@@ -15,6 +15,8 @@ interface HeaderProps {
 export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu, onOpenSearch }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [activePreview, setActivePreview] = useState<'products' | 'about' | 'planning' | null>(null);
   const closeTimeoutRef = useRef<number>();
   const location = useLocation();
@@ -49,16 +51,34 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
       const documentHeight = document.documentElement.scrollHeight;
       const scrollPercentage = (currentScrollY / (documentHeight - windowHeight)) * 100;
       
+      // 判断是否在顶部5%范围内
       if (scrollPercentage <= 5) {
         setIsScrolled(false);
+        setIsVisible(true);
       } else {
         setIsScrolled(true);
+        
+        // 判断是否到达底部
+        if (currentScrollY + windowHeight >= documentHeight - 10) {
+          setIsVisible(true);
+        } else {
+          // 根据滚动方向决定是否显示header
+          if (currentScrollY > lastScrollY) {
+            // 向下滚动
+            setIsVisible(false);
+          } else {
+            // 向上滚动
+            setIsVisible(true);
+          }
+        }
       }
+      
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -92,7 +112,9 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
         onMouseLeave={handleMouseLeave}
       >
         <header 
-          className={`relative transition-all duration-300 ${
+          className={`relative transition-all duration-300 transform ${
+            isVisible ? 'translate-y-0' : '-translate-y-full'
+          } ${
             isScrolled || activePreview ? 'bg-white' : 'bg-transparent'
           }`}
         >
