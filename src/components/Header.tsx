@@ -191,21 +191,21 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
               <div className="flex items-center space-x-4 md:hidden">
                 <button
                   onClick={onOpenSearch}
-                  className="p-2 rounded-full active:bg-gray-100 focus:outline-none transition-colors duration-200 text-gray-800"
+                  className="p-2 rounded-full active:bg-gray-100 focus:outline-none transition-colors duration-200 text-white"
                 >
                   <Search className="h-6 w-6" />
                 </button>
 
                 <button
                   onClick={onOpenLanguage}
-                  className="p-2 rounded-full active:bg-gray-100 focus:outline-none transition-colors duration-200 text-gray-800"
+                  className="p-2 rounded-full active:bg-gray-100 focus:outline-none transition-colors duration-200 text-white"
                 >
                   <Globe className="h-6 w-6" />
                 </button>
 
                 <button
                   onClick={onOpenMobileMenu}
-                  className="p-2 rounded-full active:bg-gray-100 focus:outline-none transition-colors duration-200 text-gray-800"
+                  className="p-2 rounded-full active:bg-gray-100 focus:outline-none transition-colors duration-200 text-white"
                 >
                   <Menu className="h-6 w-6" />
                 </button>
