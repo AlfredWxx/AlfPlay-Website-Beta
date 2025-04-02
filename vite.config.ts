@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     optimizeDeps: {
       exclude: ['lucide-react'],
+      include: ['i18next', 'react-i18next']
     },
     build: {
       outDir: 'dist',
@@ -19,8 +20,7 @@ export default defineConfig(({ mode }) => {
           manualChunks: {
             'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           },
-        },
-        external: ['i18next', 'react-i18next'],
+        }
       },
     },
     server: {
