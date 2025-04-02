@@ -20,6 +20,7 @@ export default defineConfig(({ mode }) => {
             'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           },
         },
+        external: ['i18next', 'react-i18next'],
       },
     },
     server: {
