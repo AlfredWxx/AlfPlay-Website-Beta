@@ -26,8 +26,8 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        'i18next': 'i18next/dist/cjs/i18next.js',
-        'react-i18next': 'react-i18next/dist/cjs/react-i18next.js'
+        'i18next': 'i18next/dist/esm/i18next.js',
+        'react-i18next': 'react-i18next/dist/esm/react-i18next.js'
       }
     },
     server: {
