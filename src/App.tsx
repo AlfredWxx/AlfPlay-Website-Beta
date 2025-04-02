@@ -1,3 +1,4 @@
+import './i18n';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
@@ -13,7 +14,6 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Catalog from './pages/Catalog';
 import { LanguageProvider } from './contexts/LanguageContext';
-import './i18n';
 
 function App() {
   const [showContact, setShowContact] = useState(false);

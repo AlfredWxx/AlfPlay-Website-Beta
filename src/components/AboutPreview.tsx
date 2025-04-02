@@ -30,7 +30,7 @@ export default function AboutPreview({ isVisible, onMouseLeave }: AboutPreviewPr
             </p>
             <Link 
               to="/about" 
-              className="inline-block bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfyellow transition-colors"
+              className="inline-block bg-alfblue text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfblue transition-colors"
             >
               View Products
             </Link>
@@ -42,7 +42,7 @@ export default function AboutPreview({ isVisible, onMouseLeave }: AboutPreviewPr
             </p>
             <Link 
               to="/about" 
-              className="inline-block bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfyellow transition-colors"
+              className="inline-block bg-alfblue text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfblue transition-colors"
             >
               View Products
             </Link>

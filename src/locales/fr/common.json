@@ -10,11 +10,11 @@
       "buttons": {
         "search": "Rechercher",
         "language": "Langue",
-        "contact": "Parlez-nous"
+        "contact": "Contactez-nous"
       }
     },
     "footer": {
-        "title": "Innovation pour le futur",
+        "title": "Innovation dans l'avenir du jeu",
         "copyright": "© 2025 AlfPlay. Tous droits réservés.",
         "links": {
           "title": "Liens rapides",
@@ -33,9 +33,50 @@
         "follow us": "Suivez-nous"
       },
     "language": {
-      "select": "Sélectionnez votre emplacement",
+      "select": "Sélectionnez votre langue",
       "en": "Anglais",
       "zh": "Chinois",
       "fr": "Français"
+    },
+    "home": {
+      "title": "Rendre l'apprentissage",
+      "title2": "Amusant et passionnant",
+      "description": "Découvrez nos jouets éducatifs innovants qui inspirent la créativité et l'apprentissage",
+      "button": "Explorer les produits",
+      "products": {
+        "title": "Nos produits",
+        "description": "Découvrez nos jouets éducatifs innovants qui inspirent la créativité et l'apprentissage"
+      },
+      "features": {
+        "premium": "Qualité premium",
+        "safe": "Jouets sûrs et durables",
+        "creative": "Jouets créatifs et éducatifs"
+      },
+      "home_products": {
+        "title": "Nos produits",  
+        "description": "Découvrez nos jouets éducatifs innovants qui inspirent la créativité et l'apprentissage"
+      }
+    },
+    "contactform": {
+      "title": "Contactez-nous",
+      "subtitle": {
+        "titlel1": "Contactez-nous",
+        "titles1": "Besoin d'aide ou d'un devis ? Nous sommes là pour vous ! Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais !",
+        "titlel2": "Contactez les experts Alfplay aujourd'hui",
+        "titles2": "Nous sommes là pour répondre à vos questions et préoccupations. Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais !"
+      },
+      "form": {
+        "organization": "Organisation",
+        "name": "Nom complet *",
+        "email": "E-mail *",
+        "phone": "Téléphone *",
+        "address": "Adresse",
+        "message": "Message *",
+        "button": "Envoyer",
+        "submitting": "Envoi en cours...",
+        "submit": "Envoyer"
+      },
+      "success": "Merci pour votre message ! Nous vous répondrons bientôt.",
+      "error": "Désolé, une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer."
     }
   } 

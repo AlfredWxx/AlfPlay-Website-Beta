@@ -1,11 +1,13 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 import enCommon from './locales/en/common.json';
 import zhCommon from './locales/zh/common.json';
 import frCommon from './locales/fr/common.json';
 
 i18n
   .use(initReactI18next)
+  .use(LanguageDetector)
   .init({
     resources: {
       en: {
@@ -18,12 +20,13 @@ i18n
         common: frCommon,
       },
     },
-    lng: localStorage.getItem('language') || 'en',
     fallbackLng: 'en',
-    interpolation: {
-      escapeValue: false,
-    },
+    debug: true,
+    ns: ['common'],
     defaultNS: 'common',
+    interpolation: {
+      escapeValue: false
+    }
   });
 
 export default i18n; 

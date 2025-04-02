@@ -3,19 +3,32 @@
     "nav": {
       "products": "产品",
       "planning": "规划",
-      "about": "关于",
-      "contact": "联系",
-      "catalog": "目录"
+      "about": "关于我们",
+      "contact": "联系我们",
+      "catalog": "产品目录"
     },
     "buttons": {
       "search": "搜索",
       "language": "语言",
       "contact": "联系我们"
-    }
+    },
+    "preview": {
+      "left-button1": "联系Alfplay专家",
+      "left-button2": "目录",
+      "left-button3": "保修"
+    },
+    "planning-preview": {
+      "title1": "规划您的下一个项目",
+      "title2": "我们如何支持您的项目",
+      "subtitle1": "探索您需要规划下一个项目的一切",
+      "subtitle2": "探索我们提供的一切以支持您的项目",
+      "button1": "查看我们的服务",
+      "button2": "探索我们的创新"
+    } 
   },
   "footer": {
-    "title": "创新未来",
-    "copyright": "© 2025 AlfPlay. 保留所有权利",
+    "title": "创新游戏未来",
+    "copyright": "© 2025 AlfPlay. 保留所有权利。",
     "links": {
       "title": "快速链接",
       "privacy": "隐私政策",
@@ -34,8 +47,49 @@
   },
   "language": {
     "select": "选择您的地区",
-    "en": "英文",
-    "zh": "中文",
-    "fr": "法文"
+    "en": "加拿大",
+    "zh": "中国",
+    "fr": "法国"
+  },
+  "home": {
+    "title": "让学习",
+    "title2": "充满乐趣",
+    "description": "探索我们创新的教育玩具，激发创造力和学习兴趣",
+    "button": "探索产品",
+    "products": {
+      "title": "我们的产品",
+      "description": "发现我们的创新教育玩具，激发创造力和学习"
+    },
+    "features": {
+      "premium": "优质品质",
+      "safe": "安全耐用的玩具",
+      "creative": "创意教育玩具"
+    },
+    "home_products": {
+      "title": "我们的产品",
+      "description": "发现我们的创新教育玩具，激发创造力和学习"
+    }
+  },
+  "contactform": {
+    "title": "联系我们",
+    "subtitle": {
+      "titlel1": "联系我们",
+      "titles1": "需要支持或报价？我们随时为您服务！请填写以下表格，我们会尽快回复您！",
+      "titlel2": "立即与 Alfplay 专家联系",
+      "titles2": "我们随时为您解答问题和疑虑。请填写以下表格，我们会尽快回复您！"
+    },
+    "form": {
+      "organization": "组织",
+      "name": "姓名 *",
+      "email": "电子邮件 *",
+      "phone": "电话 *",
+      "address": "地址",
+      "message": "留言 *",
+      "button": "提交",
+      "submitting": "发送中...",
+      "submit": "提交"
+    },
+    "success": "感谢您的留言！我们会尽快回复您。",
+    "error": "抱歉，发送消息时出现错误。请重试。"
   }
 } 

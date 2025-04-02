@@ -20,9 +20,8 @@ export default {
         'alf-secondary': {
           500: '#fbbf24',  // 次要色调
         },
-        'alfyellow': '#fad496',
-        'alfblue': '#9bc3ff',
-        'alfgreen': '#a5ddd0',
+        'alfblue': '#7cc4c4',
+        'alfgrey': '#ececec',
         // 您可以继续添加更多自定义颜色
       },
       fontFamily: {

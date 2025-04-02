@@ -11,6 +11,35 @@
       "search": "Search",
       "language": "Language",
       "contact": "Let's Talk"
+    },
+    "preview": {
+      "left-button1": "Talk with an Alfplay Expert",
+      "left-button2": "Catalogs",
+      "left-button3": "Warranty"
+    },
+    "product-preview": {
+      "title1": "Outdoors",
+      "title2": "Gardening",
+      "subtitle1": "Explore our wide range of outdoor and gardening toys",
+      "subtitle2": "Discover our collection of gardening toys",
+      "button1": "Explore Products",
+      "button2": "Explore Products"
+    },
+    "planning-preview": {
+      "title1": "Plan your next project",
+      "title2": "How we support your project",
+      "subtitle1": "Explore everything you need to plan your next project",
+      "subtitle2": "Explore everything we offer to support your project",
+      "button1": "View our services",
+      "button2": "Explore our innovations"
+    },
+    "about-preview": {
+      "title1": "Alfplay History",
+      "title2": "Our Mission",
+      "subtitle1": "Get to know the history of Alfplay Ltd.",
+      "subtitle2": "Learn about our mission and values",
+      "button1": "About Us",
+      "button2": "Our Mission"
     }
   },
   "footer": {
@@ -34,8 +63,42 @@
   },
   "language": {
     "select": "Select your location",
-    "en": "English",
-    "zh": "Chinese",
-    "fr": "French"
+    "en": "Canada",
+    "zh": "China",
+    "fr": "France"
+  },
+  "home": {
+    "title": "Making Learning",
+    "title2": "Fun and Exciting",
+    "description": "Discover our innovative educational toys that inspire creativity and learning",
+    "button": "Explore Products",
+    "features": {
+      "premium": "Premium Quality",
+      "safe": "Safe and Durable Toys",
+      "creative": "Creative and Educational Toys"
+    }
+  },
+  "contactform": {
+    "title": "Contact Us",
+    "subtitle": {
+      "titlel1": "Get in touch",
+      "titles1": "Looking for support or a quote? We are here for you! Please fill out the form below and we will get back to you as soon as possible!",
+      "titlel2": "Get in touch with Alfplay Experts today",
+      "titles2": "We are here to help you with your questions and concerns. Please fill out the form below and we will get back to you as soon as possible!"
+    },
+    "form": {
+      "organization": "Organization",
+      "name": "Full Name *",
+      "email": "Email *",
+      "phone": "Phone *",
+      "address": "Address",
+      "message": "Message *",
+      "button": "Submit",
+      "submitting": "Sending...",
+      "submit": "Submit"
+    },
+    "success": "Thank you for your message! We will get back to you soon.",
+    "error": "Sorry, there was an error sending your message. Please try again."
   }
+
 } 

@@ -2,9 +2,11 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Star, Users, Award, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import ContactSection from '../components/ContactSection';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
   const navigate = useNavigate();
+  const { t } = useTranslation('common');
   const productsRef = useRef<HTMLDivElement>(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
@@ -100,27 +102,21 @@ export default function Home() {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/10" />
-        <div className="container mx-auto px-4 text-center relative z-10">
+        <div className="container mx-auto px-4 text-left relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
-            Making Learning <br />
-            <span className="text-alfyellow">Fun and Exciting</span>
+            {t('home.title')} <br />
+            <span className="text-white">{t('home.title2')}</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white drop-shadow-lg">
-            Discover our innovative educational toys that inspire creativity and learning
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl text-white drop-shadow-lg">
+            {t('home.description')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <button
               onClick={() => navigate('/products')}
-              className="bg-alfyellow text-white px-8 py-3 rounded-md text-lg hover:bg-white hover:text-alfyellow transition-colors inline-flex items-center justify-center"
+              className="bg-alfblue text-white px-8 py-3 rounded-md text-lg hover:bg-white hover:text-alfblue transition-colors inline-flex items-center justify-center"
             >
-              Explore Products
+              {t('home.button')}
               <ArrowRight className="ml-2 h-5 w-5" />
-            </button>
-            <button
-              onClick={() => navigate('/about')}
-              className="bg-alfyellow text-white px-8 py-3 rounded-md text-lg hover:bg-white hover:text-alfyellow transition-colors"
-            >
-              Learn More
             </button>
           </div>
         </div>
@@ -131,19 +127,19 @@ export default function Home() {
         <div className="container mx-auto px-2">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6">
-              <Star className="h-8 w-12 text-alfyellow mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Premium Quality</h3>
-              <p className="text-gray-600">Safe and durable toys for endless fun</p>
+              <Star className="h-8 w-12 text-alfblue mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">{t('home.features.premium')}</h3>
+              <p className="text-gray-600">{t('home.features.safe')}</p>
             </div>
             <div className="text-center p-6">
-              <Users className="h-8 w-12 text-alfyellow mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Child-Friendly</h3>
-              <p className="text-gray-600">Designed specifically for young learners</p>
+              <Users className="h-8 w-12 text-alfblue mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">{t('home.features.child-friendly')}</h3>
+              <p className="text-gray-600">{t('home.features.designed')}</p>
             </div>
             <div className="text-center p-6">
-              <Award className="h-8 w-12 text-alfyellow mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Educational Value</h3>
-              <p className="text-gray-600">Promotes learning through play</p>
+              <Award className="h-8 w-12 text-alfblue mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">{t('home.features.educational')}</h3>
+              <p className="text-gray-600">{t('home.features.promotes')}</p>
             </div>
           </div>
         </div>
@@ -153,9 +149,9 @@ export default function Home() {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Products</h2>
+            <h2 className="text-3xl font-bold mb-4">{t('home.products.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Discover our collection of educational toys designed for early childhood development
+              {t('home.products.description')}
             </p>
           </div>
           
@@ -246,7 +242,7 @@ export default function Home() {
             {showLeftButton && (
               <button
                 onClick={() => scrollProducts('left')}
-                className={`absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-alfyellow transition-colors ${
+                className={`absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-alfblue transition-colors ${
                   showLeftButton ? 'opacity-100' : 'opacity-0'
                 }`}
               >
@@ -256,7 +252,7 @@ export default function Home() {
             {showRightButton && (
               <button
                 onClick={() => scrollProducts('right')}
-                className={`absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-alfyellow transition-colors ${
+                className={`absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-alfblue transition-colors ${
                   showRightButton ? 'opacity-100' : 'opacity-0'
                 }`}
               >

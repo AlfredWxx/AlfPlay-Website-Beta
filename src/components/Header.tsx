@@ -136,7 +136,7 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
                 >
                   <Link 
                     to="/products" 
-                    className={`${isActive('/products') ? 'text-alfyellow' : isScrolled || activePreview ? 'text-gray-800' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
+                    className={`${isActive('/products') ? 'text-alfblue' : isScrolled || activePreview ? 'text-gray-800' : 'text-white'} hover:text-alfblue transition-colors text-lg drop-shadow-lg`}
                   >
                     {t('header.nav.products')}
                   </Link>
@@ -147,7 +147,7 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
                 >
                   <Link
                     to="/planning"
-                    className={`${isActive('/planning') ? 'text-alfyellow' : isScrolled || activePreview ? 'text-gray-800' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
+                    className={`${isActive('/planning') ? 'text-alfblue' : isScrolled || activePreview ? 'text-gray-800' : 'text-white'} hover:text-alfblue transition-colors text-lg drop-shadow-lg`}
                   >
                     {t('header.nav.planning')}
                   </Link>
@@ -158,14 +158,14 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
                 >
                   <Link
                     to="/about"
-                    className={`${isActive('/about') ? 'text-alfyellow' : isScrolled || activePreview ? 'text-gray-800' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
+                    className={`${isActive('/about') ? 'text-alfblue' : isScrolled || activePreview ? 'text-gray-800' : 'text-white'} hover:text-alfblue transition-colors text-lg drop-shadow-lg`}
                   >
                     {t('header.nav.about')}
                   </Link>
                 </div>
                 <button
                   onClick={onOpenSearch}
-                  className={`p-2 rounded-full hover:bg-alfyellow transition-colors duration-200 ${
+                  className={`p-2 rounded-full hover:bg-alfblue transition-colors duration-200 ${
                     isScrolled || activePreview ? 'text-gray-800' : 'text-white'
                   }`}
                 >
@@ -173,7 +173,7 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
                 </button>
                 <button
                   onClick={onOpenLanguage}
-                  className={`p-2 rounded-full hover:bg-alfyellow transition-colors duration-200 ${
+                  className={`p-2 rounded-full hover:bg-alfblue transition-colors duration-200 ${
                     isScrolled || activePreview ? 'text-gray-800' : 'text-white'
                   }`}
                 >
@@ -181,8 +181,8 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
                 </button>
                 <button
                   onClick={onOpenContact}
-                  className={`bg-alfyellow px-6 py-3 rounded-md hover:bg-white transition-colors text-lg shadow-lg z-50 ${
-                    isScrolled || activePreview ? 'text-gray-800 hover:text-gray-800' : 'text-white hover:text-alfyellow'
+                  className={`bg-alfblue px-6 py-3 rounded-md hover:bg-white transition-colors text-lg shadow-lg z-50 ${
+                    isScrolled || activePreview ? 'text-gray-800 hover:text-gray-800' : 'text-white hover:text-alfblue'
                   }`}
                 >
                   {t('header.buttons.contact')}

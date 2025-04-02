@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function ContactSection() {
+  const { t } = useTranslation('common');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -62,10 +64,10 @@ export default function ContactSection() {
           {/* 标题部分 - 在小屏幕上占据全宽 */}
           <div className="w-full lg:w-1/3">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Get in touch with AlfPlay Experts today
+              {t('contactform.title')}
             </h2>
             <p className="text-lg text-gray-600">
-              Looking for support or a quote? We are here for you! Please fill out the form and we will get back to you as soon as possible!
+              {t('contactform.subtitle.titles1')}
             </p>
           </div>
 
@@ -76,7 +78,7 @@ export default function ContactSection() {
                 <input
                   type="text"
                   name="organization"
-                  placeholder="Organization"
+                  placeholder={t('contactform.form.organization')}
                   className="mt-1 block w-full h-14 rounded-lg shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
@@ -86,7 +88,7 @@ export default function ContactSection() {
                   type="text"
                   name="fullName"
                   required
-                  placeholder="Full Name *"
+                  placeholder={t('contactform.form.name')}
                   className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
@@ -96,7 +98,7 @@ export default function ContactSection() {
                   type="tel"
                   name="phone"
                   required
-                  placeholder="Phone *"
+                  placeholder={t('contactform.form.phone')}
                   className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
@@ -106,7 +108,7 @@ export default function ContactSection() {
                   type="email"
                   name="email"
                   required
-                  placeholder="Email *"
+                  placeholder={t('contactform.form.email')}
                   className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
@@ -115,7 +117,7 @@ export default function ContactSection() {
                 <input
                   type="text"
                   name="address"
-                  placeholder="Address"
+                  placeholder={t('contactform.form.address')}
                   className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
@@ -125,22 +127,22 @@ export default function ContactSection() {
                   name="message"
                   rows={4}
                   required
-                  placeholder="Message *"
+                  placeholder={t('contactform.form.message')}
                   className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 ></textarea>
               </div>
 
               {submitStatus === 'success' && (
                 <div className="text-green-600 text-sm opacity-100 transition-opacity duration-200">
-                  Thank you for your message! We will get back to you soon.
+                  {t('contactform.success')}
                 </div>
               )}
               
               {submitStatus === 'error' && (
                 <div className="text-red-600 text-sm opacity-100 transition-opacity duration-200">
-                  Sorry, there was an error sending your message. Please try again.
+                  {t('contactform.error')}
                   <br />
-                  <span className="text-xs">Error details: {errorMessage}</span>
+                  <span className="text-xs">{errorMessage}</span>
                 </div>
               )}
               
@@ -149,7 +151,7 @@ export default function ContactSection() {
                 disabled={isSubmitting}
                 className="inline-flex items-center bg-alfblue text-white px-6 py-3 rounded-md hover:bg-alfgreen transition-all duration-200 disabled:bg-gray-400"
               >
-                {isSubmitting ? 'Sending...' : 'Submit'}
+                {isSubmitting ? t('contactform.form.submitting') : t('contactform.form.submit')}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
             </form>

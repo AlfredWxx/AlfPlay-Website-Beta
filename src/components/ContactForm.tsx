@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { X, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface ContactFormProps {
   onClose: () => void;
 }
 
 export default function ContactForm({ onClose }: ContactFormProps) {
+  const { t } = useTranslation('common');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -77,8 +79,8 @@ export default function ContactForm({ onClose }: ContactFormProps) {
         <div className="w-4/5 mx-auto">
           <div className="mb-12">
             <div>
-              <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
-              <p className="text-gray-600 text-lg">Looking for support or a quote? We are here for you! Please fill out the form below and we will get back to you as soon as possible!</p>
+              <h2 className="text-4xl font-bold mb-6">{t('contactform.title')}</h2>
+              <p className="text-gray-600 text-lg">{t('contactform.subtitle.titlel1')}</p>
             </div>
           </div>
           
@@ -87,7 +89,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                 <input
                   type="text"
                   name="organization"
-                  placeholder="Organization"
+                  placeholder={t('contactform.form.organization')}
                   className="mt-1 block w-full h-14 rounded-lg shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
@@ -97,7 +99,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                   type="text"
                   name="fullName"
                   required
-                  placeholder="Full Name *"
+                  placeholder={t('contactform.form.name')}
                   className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
@@ -107,7 +109,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                   type="tel"
                   name="phone"
                   required
-                  placeholder="Phone *"
+                  placeholder={t('contactform.form.phone')}
                   className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
@@ -117,7 +119,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                   type="email"
                   name="email"
                   required
-                  placeholder="Email *"
+                  placeholder={t('contactform.form.email')}
                   className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
@@ -126,7 +128,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                 <input
                   type="text"
                   name="address"
-                  placeholder="Address"
+                  placeholder={t('contactform.form.address')}
                   className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 />
               </div>
@@ -136,22 +138,22 @@ export default function ContactForm({ onClose }: ContactFormProps) {
                   name="message"
                   rows={4}
                   required
-                  placeholder="Message *"
+                  placeholder={t('contactform.form.message')}
                   className="mt-1 block w-full h-14 rounded-md shadow-sm focus:border-alfblue focus:ring-alfblue p-2 placeholder-gray-400 transition-colors duration-200 bg-gray-100"
                 ></textarea>
               </div>
 
             {submitStatus === 'success' && (
               <div className="text-green-600 text-sm opacity-100 transition-opacity duration-200">
-                Thank you for your message! We will get back to you soon.
+                {t('contactform.success')}
               </div>
             )}
             
             {submitStatus === 'error' && (
               <div className="text-red-600 text-sm opacity-100 transition-opacity duration-200">
-                Sorry, there was an error sending your message. Please try again.
+                {t('contactform.error')}
                 <br />
-                <span className="text-xs">Error details: {errorMessage}</span>
+                <span className="text-xs">{errorMessage}</span>
               </div>
             )}
             
@@ -160,7 +162,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
               disabled={isSubmitting}
               className="inline-flex items-center bg-alfblue text-white px-4 py-2 rounded-md hover:bg-alfgreen transition-all duration-200 disabled:bg-gray-400"
             >
-              {isSubmitting ? 'Sending...' : 'Submit'}
+              {isSubmitting ? t('contactform.form.submitting') : t('contactform.form.submit')}
               <ArrowRight className="ml-2 h-4 w-4" />
             </button>
           </form>

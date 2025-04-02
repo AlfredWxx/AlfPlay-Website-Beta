@@ -40,7 +40,7 @@ export default function MobileMenu({
             <Link
               to="/planning"
               onClick={onClose}
-              className="block text-xl text-gray-800 hover:text-alfyellow transition-colors"
+              className="block text-xl text-gray-800 hover:text-alfblue transition-colors"
             >
               Planning
             </Link>
@@ -48,7 +48,7 @@ export default function MobileMenu({
             <Link
               to="/products"
               onClick={onClose}
-              className="block text-xl text-gray-800 hover:text-alfyellow transition-colors"
+              className="block text-xl text-gray-800 hover:text-alfblue transition-colors"
             >
               Products
             </Link>
@@ -56,7 +56,7 @@ export default function MobileMenu({
             <Link
               to="/about"
               onClick={onClose}
-              className="block text-xl text-gray-800 hover:text-alfyellow transition-colors"
+              className="block text-xl text-gray-800 hover:text-alfblue transition-colors"
             >
               About
             </Link>
@@ -67,7 +67,7 @@ export default function MobileMenu({
                   onClose();
                   onOpenContact();
                 }}
-                className="w-full bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-alfblue transition-colors text-xl shadow-lg"
+                className="w-full bg-alfblue text-white px-6 py-3 rounded-md hover:bg-alfblue transition-colors text-xl shadow-lg"
               >
                 Get in touch
               </button>
