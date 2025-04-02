@@ -19,9 +19,16 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks: {
             'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+            'i18n-vendor': ['i18next', 'react-i18next']
           },
         }
       },
+    },
+    resolve: {
+      alias: {
+        'i18next': 'i18next/dist/cjs/i18next.js',
+        'react-i18next': 'react-i18next/dist/cjs/react-i18next.js'
+      }
     },
     server: {
       proxy: {
