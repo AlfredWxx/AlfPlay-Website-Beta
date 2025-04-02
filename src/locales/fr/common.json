@@ -1,0 +1,41 @@
+{
+    "header": {
+      "nav": {
+        "products": "Produits",
+        "planning": "Planification",
+        "about": "À propos",
+        "contact": "Contact",
+        "catalog": "Catalogue"
+      },
+      "buttons": {
+        "search": "Rechercher",
+        "language": "Langue",
+        "contact": "Parlez-nous"
+      }
+    },
+    "footer": {
+        "title": "Innovation pour le futur",
+        "copyright": "© 2025 AlfPlay. Tous droits réservés.",
+        "links": {
+          "title": "Liens rapides",
+          "privacy": "Politique de confidentialité",
+          "terms": "Conditions d'utilisation",
+          "contact": "Contactez-nous",
+          "about": "À propos",
+          "products": "Produits",
+          "planning": "Planification"
+        },
+        "contact": {
+          "title": "Contactez-nous",
+          "email": "AlfPlay.Main@outlook.com",
+          "phone": "+1 (249) 688-3003"
+        },
+        "follow us": "Suivez-nous"
+      },
+    "language": {
+      "select": "Sélectionnez votre emplacement",
+      "en": "Anglais",
+      "zh": "Chinois",
+      "fr": "Français"
+    }
+  } 

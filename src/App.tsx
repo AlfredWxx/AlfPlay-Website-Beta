@@ -12,6 +12,8 @@ import Products from './pages/Products';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Catalog from './pages/Catalog';
+import { LanguageProvider } from './contexts/LanguageContext';
+import './i18n';
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -102,105 +104,107 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
-        <Header 
-          onOpenContact={handleOpenContact} 
-          onOpenLanguage={handleOpenLanguage}
-          onOpenMobileMenu={handleOpenMobileMenu}
-          onOpenSearch={handleOpenSearch}
-        />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/planning" element={<Planning />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/catalog" element={<Catalog />} />
-          </Routes>
-        </main>
-        <Footer />
-        
-        {showContact && (
-          <>
-            <div 
-              className={`fixed inset-0 bg-black transition-opacity duration-300 ${
-                isClosing ? 'bg-opacity-0' : 'bg-opacity-50'
-              } z-[60]`}
-              onClick={handleCloseContact}
-            />
-            <div 
-              className={`fixed top-0 right-0 h-full w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
-                isClosing ? 'translate-x-full' : 'translate-x-0'
-              } z-[70]`}
-            >
-              <ContactForm onClose={handleCloseContact} />
-            </div>
-          </>
-        )}
-
-        {showLanguage && (
-          <>
-            <div 
-              className={`fixed inset-0 bg-black transition-opacity duration-300 ${
-                isLanguageClosing ? 'bg-opacity-0' : 'bg-opacity-50'
-              } z-[60]`}
-              onClick={handleCloseLanguage}
-            />
-            <div 
-              className={`fixed top-0 right-0 h-full w-full sm:w-[60%] md:w-[45%] lg:w-[30%] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
-                isLanguageClosing ? 'translate-x-full' : 'translate-x-0'
-              } z-[70]`}
-            >
-              <LanguageForm onClose={handleCloseLanguage} />
-            </div>
-          </>
-        )}
-
-        {showMobileMenu && (
-          <>
-            <div 
-              className={`fixed inset-0 bg-black transition-opacity duration-300 ${
-                isMobileMenuClosing ? 'bg-opacity-0' : 'bg-opacity-50'
-              } z-[60]`}
-              onClick={handleCloseMobileMenu}
-            />
-            <div 
-              className={`fixed top-0 right-0 h-full w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
-                isMobileMenuClosing ? 'translate-x-full' : 'translate-x-0'
-              } z-[70]`}
-            >
-              <MobileMenu 
-                onClose={handleCloseMobileMenu}
-                onOpenContact={handleOpenContact}
-                onOpenLanguage={handleOpenLanguage}
-                isActive={(path) => location.pathname === path}
-                isScrolled={window.scrollY > 0}
+    <LanguageProvider>
+      <Router>
+        <div className="flex flex-col min-h-screen">
+          <Header 
+            onOpenContact={handleOpenContact} 
+            onOpenLanguage={handleOpenLanguage}
+            onOpenMobileMenu={handleOpenMobileMenu}
+            onOpenSearch={handleOpenSearch}
+          />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/planning" element={<Planning />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/catalog" element={<Catalog />} />
+            </Routes>
+          </main>
+          <Footer />
+          
+          {showContact && (
+            <>
+              <div 
+                className={`fixed inset-0 bg-black transition-opacity duration-300 ${
+                  isClosing ? 'bg-opacity-0' : 'bg-opacity-50'
+                } z-[60]`}
+                onClick={handleCloseContact}
               />
-            </div>
-          </>
-        )}
+              <div 
+                className={`fixed top-0 right-0 h-full w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+                  isClosing ? 'translate-x-full' : 'translate-x-0'
+                } z-[70]`}
+              >
+                <ContactForm onClose={handleCloseContact} />
+              </div>
+            </>
+          )}
 
-        {showSearch && (
-          <>
-            <div 
-              className={`fixed inset-0 bg-black transition-opacity duration-300 ${
-                isSearchClosing ? 'bg-opacity-0' : 'bg-opacity-50'
-              } z-[60]`}
-              onClick={handleCloseSearch}
-            />
-            <div 
-              className={`fixed top-0 left-0 w-full h-[35vh] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
-                isSearchClosing ? '-translate-y-full' : 'translate-y-0'
-              } z-[70]`}
-            >
-              <SearchForm onClose={handleCloseSearch} />
-            </div>
-          </>
-        )}
-      </div>
-    </Router>
+          {showLanguage && (
+            <>
+              <div 
+                className={`fixed inset-0 bg-black transition-opacity duration-300 ${
+                  isLanguageClosing ? 'bg-opacity-0' : 'bg-opacity-50'
+                } z-[60]`}
+                onClick={handleCloseLanguage}
+              />
+              <div 
+                className={`fixed top-0 right-0 h-full w-full sm:w-[60%] md:w-[45%] lg:w-[30%] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+                  isLanguageClosing ? 'translate-x-full' : 'translate-x-0'
+                } z-[70]`}
+              >
+                <LanguageForm onClose={handleCloseLanguage} />
+              </div>
+            </>
+          )}
+
+          {showMobileMenu && (
+            <>
+              <div 
+                className={`fixed inset-0 bg-black transition-opacity duration-300 ${
+                  isMobileMenuClosing ? 'bg-opacity-0' : 'bg-opacity-50'
+                } z-[60]`}
+                onClick={handleCloseMobileMenu}
+              />
+              <div 
+                className={`fixed top-0 right-0 h-full w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+                  isMobileMenuClosing ? 'translate-x-full' : 'translate-x-0'
+                } z-[70]`}
+              >
+                <MobileMenu 
+                  onClose={handleCloseMobileMenu}
+                  onOpenContact={handleOpenContact}
+                  onOpenLanguage={handleOpenLanguage}
+                  isActive={(path) => location.pathname === path}
+                  isScrolled={window.scrollY > 0}
+                />
+              </div>
+            </>
+          )}
+
+          {showSearch && (
+            <>
+              <div 
+                className={`fixed inset-0 bg-black transition-opacity duration-300 ${
+                  isSearchClosing ? 'bg-opacity-0' : 'bg-opacity-50'
+                } z-[60]`}
+                onClick={handleCloseSearch}
+              />
+              <div 
+                className={`fixed top-0 left-0 w-full h-[35vh] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+                  isSearchClosing ? '-translate-y-full' : 'translate-y-0'
+                } z-[70]`}
+              >
+                <SearchForm onClose={handleCloseSearch} />
+              </div>
+            </>
+          )}
+        </div>
+      </Router>
+    </LanguageProvider>
   );
 }
 

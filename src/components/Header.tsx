@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Globe, Menu, Search, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import ProductPreview from './ProductPreview';
 import AboutPreview from './AboutPreview';
 import PlanningPreview from './PlanningPreview';
@@ -13,6 +14,7 @@ interface HeaderProps {
 }
 
 export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu, onOpenSearch }: HeaderProps) {
+  const { t } = useTranslation('common');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -136,7 +138,7 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
                     to="/products" 
                     className={`${isActive('/products') ? 'text-alfyellow' : isScrolled || activePreview ? 'text-gray-800' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
                   >
-                    Products
+                    {t('header.nav.products')}
                   </Link>
                 </div>
                 <div 
@@ -147,7 +149,7 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
                     to="/planning"
                     className={`${isActive('/planning') ? 'text-alfyellow' : isScrolled || activePreview ? 'text-gray-800' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
                   >
-                    Planning
+                    {t('header.nav.planning')}
                   </Link>
                 </div>
                 <div 
@@ -158,7 +160,7 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
                     to="/about"
                     className={`${isActive('/about') ? 'text-alfyellow' : isScrolled || activePreview ? 'text-gray-800' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
                   >
-                    About
+                    {t('header.nav.about')}
                   </Link>
                 </div>
                 <button
@@ -183,7 +185,7 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
                     isScrolled || activePreview ? 'text-gray-800 hover:text-gray-800' : 'text-white hover:text-alfyellow'
                   }`}
                 >
-                  Let's Talk
+                  {t('header.buttons.contact')}
                 </button>
               </nav>
 
@@ -223,7 +225,7 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
         <div className="fixed inset-0 bg-black bg-opacity-50 z-40">
           <div className="fixed inset-y-0 right-0 w-full max-w-md bg-white shadow-lg transform transition-transform duration-300 ease-in-out">
             <div className="flex items-center justify-between p-4 border-b">
-              <h2 className="text-xl font-semibold text-gray-800">Menu</h2>
+              <h2 className="text-xl font-semibold text-gray-800">{t('header.nav.menu')}</h2>
               <button 
                 onClick={() => setIsMenuOpen(false)}
                 className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200"
@@ -238,21 +240,21 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
                   className="block text-base text-gray-800 hover:text-alfblue"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Products
+                  {t('header.nav.products')}
                 </Link>
                 <Link 
                   to="/about" 
                   className="block text-base text-gray-800 hover:text-alfblue"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  About
+                  {t('header.nav.about')}
                 </Link>
                 <Link 
                   to="/planning" 
                   className="block text-base text-gray-800 hover:text-alfblue"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Planning
+                  {t('header.nav.planning')}
                 </Link>
               </div>
             </nav>

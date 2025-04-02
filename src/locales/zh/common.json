@@ -1,0 +1,41 @@
+{
+  "header": {
+    "nav": {
+      "products": "产品",
+      "planning": "规划",
+      "about": "关于",
+      "contact": "联系",
+      "catalog": "目录"
+    },
+    "buttons": {
+      "search": "搜索",
+      "language": "语言",
+      "contact": "联系我们"
+    }
+  },
+  "footer": {
+    "title": "创新未来",
+    "copyright": "© 2025 AlfPlay. 保留所有权利",
+    "links": {
+      "title": "快速链接",
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "contact": "联系我们",
+      "about": "关于我们",
+      "products": "产品",
+      "planning": "规划"
+    },
+    "contact": {
+      "title": "联系我们",
+      "email": "AlfPlay.Main@outlook.com",
+      "phone": "+1 (249) 688-3003"
+    },
+    "follow us": "关注我们"
+  },
+  "language": {
+    "select": "选择您的地区",
+    "en": "英文",
+    "zh": "中文",
+    "fr": "法文"
+  }
+} 
