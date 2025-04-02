@@ -15,24 +15,35 @@ export default function ProductPreview({ isVisible, onMouseLeave }: ProductPrevi
       onMouseLeave={onMouseLeave}
     >
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-800">我们的产品</h2>
+            <h2 className="text-1xl font-bold text-gray-800">Talk with an Alfplay Expert</h2>
+            <h2 className="text-1xl font-bold text-gray-800">Catalogs</h2>
+            <h2 className="text-1xl font-bold text-gray-800">Warranty</h2>
+          </div>
+          <div className="space-y-6 animate-fadeIn">
+            <h2 className="text-2xl font-bold text-gray-800">Outdoors</h2>
             <p className="text-gray-600">
-              探索 AlfPlay 的游戏世界，体验独特的游戏乐趣。
+              Explore our range of outdoor products, from gardening tools to outdoor toys.
             </p>
             <Link 
               to="/products" 
               className="inline-block bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfyellow transition-colors"
             >
-              浏览产品
+              View Products
             </Link>
           </div>
           <div className="space-y-6 animate-fadeIn">
-            <h2 className="text-2xl font-bold text-gray-800">特色功能</h2>
+            <h2 className="text-2xl font-bold text-gray-800">Gardening</h2>
             <p className="text-gray-600">
-              创新的游戏机制，精美的视觉效果，让您的游戏体验更加精彩。
+              Explore our range of gardening products, from gardening tools to outdoor toys.
             </p>
+            <Link 
+              to="/products" 
+              className="inline-block bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfyellow transition-colors"
+            >
+              View Products
+            </Link>
           </div>
         </div>
       </div>

@@ -77,7 +77,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
         <div className="w-4/5 mx-auto">
           <div className="mb-12">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+              <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
               <p className="text-gray-600 text-lg">Looking for support or a quote? We are here for you! Please fill out the form below and we will get back to you as soon as possible!</p>
             </div>
           </div>

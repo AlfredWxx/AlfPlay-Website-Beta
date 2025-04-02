@@ -15,24 +15,35 @@ export default function AboutPreview({ isVisible, onMouseLeave }: AboutPreviewPr
       onMouseLeave={onMouseLeave}
     >
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-800">关于我们</h2>
+            <h2 className="text-1xl font-bold text-gray-800">Talk with an Alfplay Expert</h2>
+            <h2 className="text-1xl font-bold text-gray-800">Catalogs</h2>
+            <h2 className="text-1xl font-bold text-gray-800">Warranty</h2>
+          </div>
+          <div className="space-y-6 animate-fadeIn">
+            <h2 className="text-2xl font-bold text-gray-800">Alfplay History</h2>
             <p className="text-gray-600">
-              AlfPlay 致力于为用户提供最优质的游戏体验。我们相信，游戏不仅仅是娱乐，更是一种艺术形式。
+              Get to know the history of Alfplay.
             </p>
             <Link 
               to="/about" 
               className="inline-block bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfyellow transition-colors"
             >
-              了解更多
+              View Products
             </Link>
           </div>
           <div className="space-y-6 animate-fadeIn">
-            <h2 className="text-2xl font-bold text-gray-800">我们的使命</h2>
+            <h2 className="text-2xl font-bold text-gray-800">Our Mission</h2>
             <p className="text-gray-600">
-              通过创新和技术，为全球玩家带来独特的游戏体验，让每个人都能在游戏中找到属于自己的快乐。
+              Learn about our mission and vision.
             </p>
+            <Link 
+              to="/about" 
+              className="inline-block bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfyellow transition-colors"
+            >
+              View Products
+            </Link>
           </div>
         </div>
       </div>

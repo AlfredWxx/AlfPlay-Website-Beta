@@ -15,24 +15,35 @@ export default function PlanningPreview({ isVisible, onMouseLeave }: PlanningPre
       onMouseLeave={onMouseLeave}
     >
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-800">游戏规划</h2>
+            <h2 className="text-1xl font-bold text-gray-800">Talk with an Alfplay Expert</h2>
+            <h2 className="text-1xl font-bold text-gray-800">Catalogs</h2>
+            <h2 className="text-1xl font-bold text-gray-800">Warranty</h2>
+          </div>
+          <div className="space-y-6 animate-fadeIn">
+            <h2 className="text-2xl font-bold text-gray-800">Plan your next project</h2>
             <p className="text-gray-600">
-              我们正在开发多个令人兴奋的游戏项目，包括角色扮演、策略和休闲游戏等多种类型。
+              Explore everything you need to plan your next project.
             </p>
             <Link 
               to="/planning" 
               className="inline-block bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfyellow transition-colors"
             >
-              查看详情
+              View Products
             </Link>
           </div>
           <div className="space-y-6 animate-fadeIn">
-            <h2 className="text-2xl font-bold text-gray-800">开发路线图</h2>
+            <h2 className="text-2xl font-bold text-gray-800">How we support your project</h2>
             <p className="text-gray-600">
-              了解我们未来的游戏开发计划，包括即将推出的新游戏和现有游戏的更新计划。
+              Explore everything we offer to support your project.
             </p>
+            <Link 
+              to="/planning" 
+              className="inline-block bg-alfyellow text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfyellow transition-colors"
+            >
+              View Products
+            </Link>
           </div>
         </div>
       </div>
