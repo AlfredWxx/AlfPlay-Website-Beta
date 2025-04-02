@@ -191,25 +191,13 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
               <div className="flex items-center space-x-4 md:hidden">
                 <button
                   onClick={onOpenSearch}
-                  className={`p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 ${
-                    isScrolled || activePreview ? 'text-gray-800' : 'text-white'
-                  }`}
+                  className="p-2 rounded-full hover:bg-gray-100 active:bg-transparent transition-colors duration-200 text-gray-800"
                 >
                   <Search className="h-6 w-6" />
                 </button>
                 <button
-                  onClick={onOpenLanguage}
-                  className={`p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 ${
-                    isScrolled || activePreview ? 'text-gray-800' : 'text-white'
-                  }`}
-                >
-                  <Globe className="h-6 w-6" />
-                </button>
-                <button
                   onClick={onOpenMobileMenu}
-                  className={`p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 ${
-                    isScrolled || activePreview ? 'text-gray-800' : 'text-white'
-                  }`}
+                  className="p-2 rounded-full hover:bg-gray-100 active:bg-transparent transition-colors duration-200 text-gray-800"
                 >
                   <Menu className="h-6 w-6" />
                 </button>
