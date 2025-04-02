@@ -9,7 +9,7 @@ interface PlanningPreviewProps {
 export default function PlanningPreview({ isVisible, onMouseLeave }: PlanningPreviewProps) {
   return (
     <div 
-      className={`fixed top-16 left-0 w-full bg-white shadow-lg transform transition-all duration-300 ease-in-out pointer-events-none opacity-0 z-30 ${
+      className={`fixed top-18 left-0 w-full bg-white shadow-lg transform transition-all duration-300 ease-in-out pointer-events-none opacity-0 z-30 ${
         isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0'
       }`}
       onMouseLeave={onMouseLeave}
@@ -17,7 +17,7 @@ export default function PlanningPreview({ isVisible, onMouseLeave }: PlanningPre
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-6">
-            <h2 className="text-1xl font-bold text-gray-800">Talk with an Alfplay Expert</h2>
+            <Link to="/contact" className="text-1xl font-bold text-gray-800 hover:underline">Talk with an Alfplay Expert</Link>
             <h2 className="text-1xl font-bold text-gray-800">Catalogs</h2>
             <h2 className="text-1xl font-bold text-gray-800">Warranty</h2>
           </div>
