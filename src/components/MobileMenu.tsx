@@ -30,7 +30,7 @@ export default function MobileMenu({
           <div className="mb-12">
             <div className="flex items-center space-x-3">
               <img src="/images/AlfPlayLogo-removebg.png" alt="AlfPlay Logo" className="h-16 w-auto" />
-              <span className={`text-2xl font-bold drop-shadow-lg ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
+              <span className="text-2xl font-bold drop-shadow-lg text-gray-800">
                 AlfPlay
               </span>
             </div>
@@ -40,9 +40,7 @@ export default function MobileMenu({
             <Link
               to="/planning"
               onClick={onClose}
-              className={`block text-xl ${
-                isActive('/planning') ? 'text-alfyellow' : isScrolled ? 'text-gray-800' : 'text-white'
-              } hover:text-alfyellow transition-colors`}
+              className="block text-xl text-gray-800 hover:text-alfyellow transition-colors"
             >
               Planning
             </Link>
@@ -50,9 +48,7 @@ export default function MobileMenu({
             <Link
               to="/products"
               onClick={onClose}
-              className={`block text-xl ${
-                isActive('/products') ? 'text-alfyellow' : isScrolled ? 'text-gray-800' : 'text-white'
-              } hover:text-alfyellow transition-colors`}
+              className="block text-xl text-gray-800 hover:text-alfyellow transition-colors"
             >
               Products
             </Link>
@@ -60,27 +56,10 @@ export default function MobileMenu({
             <Link
               to="/about"
               onClick={onClose}
-              className={`block text-xl ${
-                isActive('/about') ? 'text-alfyellow' : isScrolled ? 'text-gray-800' : 'text-white'
-              } hover:text-alfyellow transition-colors`}
+              className="block text-xl text-gray-800 hover:text-alfyellow transition-colors"
             >
               About
             </Link>
-
-            <div className="pt-4">
-              <button
-                onClick={() => {
-                  onClose();
-                  onOpenLanguage();
-                }}
-                className={`w-full flex items-center justify-center space-x-2 p-3 rounded-lg hover:bg-gray-100 transition-colors ${
-                  isScrolled ? 'text-gray-800' : 'text-white'
-                }`}
-              >
-                <span className="text-2xl">🌐</span>
-                <span className="text-xl">Language</span>
-              </button>
-            </div>
 
             <div className="pt-4">
               <button

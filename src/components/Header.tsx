@@ -122,7 +122,7 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
             <div className="flex items-center justify-between h-20">
               <Link to="/" className="flex items-center space-x-3">
                 <img src="/images/AlfPlayLogo-removebg.png" alt="AlfPlay Logo" className="h-20 w-auto" />
-                <span className={`text-2xl md:text-3xl lg:text-5xl font-bold drop-shadow-lg font-roboto ${isScrolled || activePreview ? 'text-gray-800' : 'text-white'}`}>
+                <span className={`text-5xl font-bold drop-shadow-lg font-roboto ${isScrolled || activePreview ? 'text-gray-800' : 'text-white'}`}>
                   Alfplay
                 </span>
               </Link>
