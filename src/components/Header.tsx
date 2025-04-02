@@ -17,13 +17,13 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [activePreview, setActivePreview] = useState<'products' | 'about' | 'planning' | null>(null);
+  const [activePreview, setActivePreview] = useState<'products' | 'planning' | 'about' | null>(null);
   const closeTimeoutRef = useRef<number>();
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
 
-  const handleMouseEnter = (preview: 'products' | 'about' | 'planning') => {
+  const handleMouseEnter = (preview: 'products' | 'planning' | 'about') => {
     if (closeTimeoutRef.current) {
       window.clearTimeout(closeTimeoutRef.current);
     }
@@ -96,10 +96,10 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
     switch (activePreview) {
       case 'products':
         return <ProductPreview {...commonProps} />;
-      case 'about':
-        return <AboutPreview {...commonProps} />;
       case 'planning':
         return <PlanningPreview {...commonProps} />;
+      case 'about':
+        return <AboutPreview {...commonProps} />;
       default:
         return null;
     }
@@ -141,17 +141,6 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
                 </div>
                 <div 
                   className="relative"
-                  onMouseEnter={() => handleMouseEnter('about')}
-                >
-                  <Link
-                    to="/about"
-                    className={`${isActive('/about') ? 'text-alfyellow' : isScrolled || activePreview ? 'text-gray-800' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
-                  >
-                    About
-                  </Link>
-                </div>
-                <div 
-                  className="relative"
                   onMouseEnter={() => handleMouseEnter('planning')}
                 >
                   <Link
@@ -159,6 +148,17 @@ export default function Header({ onOpenContact, onOpenLanguage, onOpenMobileMenu
                     className={`${isActive('/planning') ? 'text-alfyellow' : isScrolled || activePreview ? 'text-gray-800' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
                   >
                     Planning
+                  </Link>
+                </div>
+                <div 
+                  className="relative"
+                  onMouseEnter={() => handleMouseEnter('about')}
+                >
+                  <Link
+                    to="/about"
+                    className={`${isActive('/about') ? 'text-alfyellow' : isScrolled || activePreview ? 'text-gray-800' : 'text-white'} hover:text-alfyellow transition-colors text-lg drop-shadow-lg`}
+                  >
+                    About
                   </Link>
                 </div>
                 <button

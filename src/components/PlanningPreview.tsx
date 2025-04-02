@@ -16,10 +16,12 @@ export default function PlanningPreview({ isVisible, onMouseLeave }: PlanningPre
     >
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-6">
-            <Link to="/contact" className="text-1xl font-bold text-gray-800 hover:underline">Talk with an Alfplay Expert</Link>
-            <h2 className="text-1xl font-bold text-gray-800">Catalogs</h2>
-            <h2 className="text-1xl font-bold text-gray-800">Warranty</h2>
+        <div className="space-y-6">
+            <div className="space-y-4">
+              <Link to="/contact" className="block text-1xl font-bold text-gray-800 hover:underline">Talk with an Alfplay Expert</Link> 
+              <Link to="/catalog" className="block text-1xl font-bold text-gray-800 hover:underline">Catalogs</Link> 
+              <Link to="/catalog" className="block text-1xl font-bold text-gray-800 hover:underline">Warranty</Link> 
+            </div>
           </div>
           <div className="space-y-6 animate-fadeIn">
             <h2 className="text-2xl font-bold text-gray-800">Plan your next project</h2>
