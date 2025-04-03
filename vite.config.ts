@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
       outDir: 'dist',
       sourcemap: true,
       rollupOptions: {
+        external: ['i18next-browser-languagedetector', 'i18next-http-backend'],
         output: {
           manualChunks: {
             'react-vendor': ['react', 'react-dom', 'react-router-dom'],
