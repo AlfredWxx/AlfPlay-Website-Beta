@@ -10,17 +10,16 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     optimizeDeps: {
       exclude: ['lucide-react'],
-      include: ['i18next', 'react-i18next']
+      include: ['i18next', 'react-i18next', 'i18next-browser-languagedetector']
     },
     build: {
       outDir: 'dist',
       sourcemap: true,
       rollupOptions: {
-        external: ['i18next-browser-languagedetector', 'i18next-http-backend'],
         output: {
           manualChunks: {
             'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-            'i18n-vendor': ['i18next', 'react-i18next']
+            'i18n-vendor': ['i18next', 'react-i18next', 'i18next-browser-languagedetector']
           },
         }
       },

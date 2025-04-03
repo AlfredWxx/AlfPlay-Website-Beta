@@ -21,7 +21,7 @@ i18n
       },
     },
     fallbackLng: 'en',
-    debug: true,
+    debug: process.env.NODE_ENV === 'development',
     ns: ['common'],
     defaultNS: 'common',
     interpolation: {

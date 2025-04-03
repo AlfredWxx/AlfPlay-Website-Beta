@@ -85,7 +85,7 @@ export default function Home() {
             </button>
             <div className="text-center">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4">
-                欢迎新股东查看AlfPlay官方网站🙇！
+                欢迎未来新股东查看Alfplay官方网站🙇！
               </h2>
             </div>
           </div>
