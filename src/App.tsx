@@ -1,6 +1,6 @@
 import './i18n';
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ContactForm from './components/ContactForm';
@@ -14,6 +14,17 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Catalog from './pages/Catalog';
 import { LanguageProvider } from './contexts/LanguageContext';
+
+// 创建一个新的组件来处理滚动行为
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -106,6 +117,7 @@ function App() {
   return (
     <LanguageProvider>
       <Router>
+        <ScrollToTop />
         <div className="flex flex-col min-h-screen">
           <Header 
             onOpenContact={handleOpenContact} 

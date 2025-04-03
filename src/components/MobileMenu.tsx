@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
-
+import { useTranslation } from 'react-i18next';
 interface MobileMenuProps {
   onClose: () => void;
   onOpenContact: () => void;

@@ -72,10 +72,26 @@
     "title2": "Fun and Exciting",
     "description": "Discover our innovative educational toys that inspire creativity and learning",
     "button": "Explore Products",
-    "features": {
-      "premium": "Premium Quality",
-      "safe": "Safe and Durable Toys",
-      "creative": "Creative and Educational Toys"
+    "products": {
+      "title": "Explore Our Newest Products",
+      "p1title" : "Product 1",
+      "p1description" : "Description 1",
+      "p2title" : "Product 2",
+      "p2description" : "Description 2",
+      "p3title" : "Product 3",
+      "p3description" : "Description 3",
+      "p4title" : "Product 4",
+      "p4description" : "Description 4",
+      "p5title" : "Product 5",
+      "p5description" : "Description 5",
+      "p6title" : "Product 6",
+      "p6description" : "Description 6",
+      "p7title" : "Product 7",
+      "p7description" : "Description 7",
+      "p8title" : "Product 8",
+      "p8description" : "Description 8",
+      "p9title" : "Product 9",
+      "p9description" : "Description 9"
     }
   },
   "contactform": {

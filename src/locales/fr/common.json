@@ -11,6 +11,35 @@
         "search": "Rechercher",
         "language": "Langue",
         "contact": "Contactez-nous"
+      },
+      "preview": {
+        "left-button1": "Parler avec un expert Alfplay",
+        "left-button2": "Catalogues",
+        "left-button3": "Garantie"
+      },
+      "product-preview": {
+        "title1": "Extérieur",
+        "title2": "Jardinage",
+        "subtitle1": "Découvrez notre large gamme de jouets d'extérieur et de jardinage",
+        "subtitle2": "Découvrez notre collection de jouets de jardinage",
+        "button1": "Explorer les produits",
+        "button2": "Explorer les produits"
+      },
+      "planning-preview": {
+        "title1": "Planifiez votre prochain projet",
+        "title2": "Comment nous soutenons votre projet",
+        "subtitle1": "Explorez tout ce dont vous avez besoin pour planifier votre prochain projet",
+        "subtitle2": "Explorez tout ce que nous offrons pour soutenir votre projet",
+        "button1": "Voir nos services",
+        "button2": "Explorer nos innovations"
+      },
+      "about-preview": {
+        "title1": "Histoire d'Alfplay",
+        "title2": "Notre Mission",
+        "subtitle1": "Découvrez l'histoire d'Alfplay Ltd.",
+        "subtitle2": "En savoir plus sur notre mission et nos valeurs",
+        "button1": "À propos de nous",
+        "button2": "Notre Mission"
       }
     },
     "footer": {
@@ -33,10 +62,10 @@
         "follow us": "Suivez-nous"
       },
     "language": {
-      "select": "Sélectionnez votre langue",
-      "en": "Anglais",
-      "zh": "Chinois",
-      "fr": "Français"
+      "select": "Sélectionnez votre région",
+      "en": "Canada",
+      "zh": "Chine",
+      "fr": "France"
     },
     "home": {
       "title": "Rendre l'apprentissage",
@@ -44,8 +73,25 @@
       "description": "Découvrez nos jouets éducatifs innovants qui inspirent la créativité et l'apprentissage",
       "button": "Explorer les produits",
       "products": {
-        "title": "Nos produits",
-        "description": "Découvrez nos jouets éducatifs innovants qui inspirent la créativité et l'apprentissage"
+        "title": "Découvrez nos derniers produits",
+        "p1title": "Produit 1",
+        "p1description": "Description 1",
+        "p2title": "Produit 2",
+        "p2description": "Description 2",
+        "p3title": "Produit 3",
+        "p3description": "Description 3",
+        "p4title": "Produit 4",
+        "p4description": "Description 4",
+        "p5title": "Produit 5",
+        "p5description": "Description 5",
+        "p6title": "Produit 6",
+        "p6description": "Description 6",
+        "p7title": "Produit 7",
+        "p7description": "Description 7",
+        "p8title": "Produit 8",
+        "p8description": "Description 8",
+        "p9title": "Produit 9",
+        "p9description": "Description 9"
       },
       "features": {
         "premium": "Qualité premium",

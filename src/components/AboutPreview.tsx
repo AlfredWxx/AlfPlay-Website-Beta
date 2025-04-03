@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useTranslation } from 'react-i18next';
 interface AboutPreviewProps {
   isVisible: boolean;
   onMouseLeave: () => void;
 }
 
 export default function AboutPreview({ isVisible, onMouseLeave }: AboutPreviewProps) {
+  const { t } = useTranslation('common');
   return (
     <div 
       className={`fixed top-18 left-0 w-full bg-white shadow-lg transform transition-all duration-300 ease-in-out pointer-events-none opacity-0 z-30 ${
@@ -18,33 +19,33 @@ export default function AboutPreview({ isVisible, onMouseLeave }: AboutPreviewPr
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="space-y-6">
             <div className="space-y-4">
-              <Link to="/contact" className="block text-1xl font-bold text-gray-800 hover:underline">Talk with an Alfplay Expert</Link> 
-              <Link to="/catalog" className="block text-1xl font-bold text-gray-800 hover:underline">Catalogs</Link> 
-              <Link to="/catalog" className="block text-1xl font-bold text-gray-800 hover:underline">Warranty</Link> 
+              <Link to="/contact" className="block text-1xl font-bold text-gray-800 hover:underline">{t('header.preview.left-button1')}</Link> 
+              <Link to="/catalog" className="block text-1xl font-bold text-gray-800 hover:underline">{t('header.preview.left-button2')}</Link> 
+              <Link to="/catalog" className="block text-1xl font-bold text-gray-800 hover:underline">{t('header.preview.left-button3')}</Link> 
             </div>
           </div>
-          <div className="space-y-6 animate-fadeIn">
-            <h2 className="text-2xl font-bold text-gray-800">Alfplay History</h2>
+          <div className="space-y-6 animate-fadeIn">  
+            <h2 className="text-2xl font-bold text-gray-800">{t('header.about-preview.title1')}</h2>
             <p className="text-gray-600">
-              Get to know the history of Alfplay.
+              {t('header.about-preview.subtitle1')}
             </p>
             <Link 
               to="/about" 
               className="inline-block bg-alfblue text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfblue transition-colors"
             >
-              View Products
+              {t('header.about-preview.button1')}
             </Link>
           </div>
           <div className="space-y-6 animate-fadeIn">
-            <h2 className="text-2xl font-bold text-gray-800">Our Mission</h2>
+            <h2 className="text-2xl font-bold text-gray-800">{t('header.about-preview.title2')}</h2>
             <p className="text-gray-600">
-              Learn about our mission and vision.
+              {t('header.about-preview.subtitle2')}
             </p>
             <Link 
               to="/about" 
               className="inline-block bg-alfblue text-white px-6 py-3 rounded-md hover:bg-white hover:text-alfblue transition-colors"
             >
-              View Products
+              {t('header.about-preview.button2')}
             </Link>
           </div>
         </div>

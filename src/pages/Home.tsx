@@ -122,37 +122,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Features Section */}
-      <div className="py-6 bg-white">
-        <div className="container mx-auto px-2">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <Star className="h-8 w-12 text-alfblue mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{t('home.features.premium')}</h3>
-              <p className="text-gray-600">{t('home.features.safe')}</p>
-            </div>
-            <div className="text-center p-6">
-              <Users className="h-8 w-12 text-alfblue mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{t('home.features.child-friendly')}</h3>
-              <p className="text-gray-600">{t('home.features.designed')}</p>
-            </div>
-            <div className="text-center p-6">
-              <Award className="h-8 w-12 text-alfblue mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{t('home.features.educational')}</h3>
-              <p className="text-gray-600">{t('home.features.promotes')}</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Products Section */}
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">{t('home.products.title')}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t('home.products.description')}
-            </p>
           </div>
           
           <div className="relative">
@@ -164,56 +139,56 @@ export default function Home() {
               {[
                 {
                   id: 1,
-                  title: "Product 1",
-                  description: "Product 1 description",
+                  title: t('home.products.p1title'),
+                  description: t('home.products.p1description'),
                   image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                 },
                 {
                   id: 2,
-                  title: "Product 2",
-                  description: "Product 2 description",
+                  title: t('home.products.p2title'),
+                  description: t('home.products.p2description'),
                   image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                 },
                 {
                   id: 3,
-                  title: "Product 3",
-                  description: "Product 3 description",
+                  title: t('home.products.p3title'),
+                  description: t('home.products.p3description'),
                   image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                 },
                 {
                   id: 4,
-                  title: "Product 4",
-                  description: "Product 4 description",
+                  title: t('home.products.p4title'),
+                  description: t('home.products.p4description'),
                   image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                 },
                 {
                   id: 5,
-                  title: "Product 5",
-                  description: "Product 5 description",
+                  title: t('home.products.p5title'),
+                  description: t('home.products.p5description'),
                   image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                 },
                 {
                   id: 6,
-                  title: "Product 6",
-                  description: "Product 6 description",
+                  title: t('home.products.p6title'),
+                  description: t('home.products.p6description'),
                   image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                 },
                 {
                   id: 7,
-                  title: "Product 7",
-                  description: "Product 7 description",
+                  title: t('home.products.p7title'),
+                  description: t('home.products.p7description'),
                   image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                 },
                 {
                   id: 8,
-                  title: "Product 8",
-                  description: "Product 8 description",
+                  title: t('home.products.p8title'),
+                  description: t('home.products.p8description'),
                   image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                 },
                 {
                   id: 9,
-                  title: "Product 9",
-                  description: "Product 9 description",
+                  title: t('home.products.p9title'),
+                  description: t('home.products.p9description'),
                   image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                 },
                 {

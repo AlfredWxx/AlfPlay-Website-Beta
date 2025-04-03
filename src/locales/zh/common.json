@@ -17,6 +17,14 @@
       "left-button2": "目录",
       "left-button3": "保修"
     },
+    "product-preview": {
+      "title1": "户外",
+      "title2": "园艺",
+      "subtitle1": "探索我们的户外和园艺玩具",
+      "subtitle2": "发现我们的园艺玩具",
+      "button1": "探索产品",
+      "button2": "探索产品"
+    },
     "planning-preview": {
       "title1": "规划您的下一个项目",
       "title2": "我们如何支持您的项目",
@@ -24,7 +32,15 @@
       "subtitle2": "探索我们提供的一切以支持您的项目",
       "button1": "查看我们的服务",
       "button2": "探索我们的创新"
-    } 
+    },
+    "about-preview": {
+      "title1": "Alfplay历史",
+      "title2": "我们的使命",
+      "subtitle1": "了解Alfplay有限公司的历史",
+      "subtitle2": "了解我们的使命和价值观",
+      "button1": "关于我们",
+      "button2": "我们的使命"
+    }
   },
   "footer": {
     "title": "创新游戏未来",
@@ -57,8 +73,25 @@
     "description": "探索我们创新的教育玩具，激发创造力和学习兴趣",
     "button": "探索产品",
     "products": {
-      "title": "我们的产品",
-      "description": "发现我们的创新教育玩具，激发创造力和学习"
+      "title": "探索我们的最新产品",
+      "p1title": "产品1",
+      "p1description": "描述1",
+      "p2title": "产品2",
+      "p2description": "描述2",
+      "p3title": "产品3",
+      "p3description": "描述3",
+      "p4title": "产品4",
+      "p4description": "描述4",
+      "p5title": "产品5",
+      "p5description": "描述5",
+      "p6title": "产品6",
+      "p6description": "描述6",
+      "p7title": "产品7",
+      "p7description": "描述7",
+      "p8title": "产品8",
+      "p8description": "描述8",
+      "p9title": "产品9",
+      "p9description": "描述9"
     },
     "features": {
       "premium": "优质品质",
