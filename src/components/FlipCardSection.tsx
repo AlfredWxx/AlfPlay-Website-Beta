@@ -23,8 +23,17 @@ interface SplitFlapProps {
 const DISPLAY_TEXTS = [
   'WELCOME',
   'TO',
-  'ALFPLAY',
-  'PLAYGROUND!'
+  "ALFPLAY",
+  'PLAYGROUND!',
+  'WELCOME',
+  'TO',
+  "ALFPLAY",
+  'PLAYGROUND!',
+  'INNOVATIVE',
+  'SAFE',
+  'FUN',
+  'FOR',
+  'KIDS'
 ];
 
 const TOTAL_CARDS = 11;  // 固定卡片数量

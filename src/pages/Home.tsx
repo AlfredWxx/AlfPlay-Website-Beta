@@ -90,7 +90,7 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section with Background */}
       <div 
-        className="h-[78vh] bg-cover bg-center flex items-center relative"
+        className="h-[83vh] bg-cover bg-center flex items-center relative"
         style={{
           backgroundImage: 'url(/images/project-jurong-lake-gardens-playground-main.jpg)',
           backgroundBlendMode: 'overlay',

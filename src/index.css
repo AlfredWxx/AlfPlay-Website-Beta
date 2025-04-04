@@ -103,29 +103,32 @@
 
 /* 翻片显示器样式 */
 .split-flap-display {
-  min-height: 60vh;
+  min-height: 40vh;  /* 减小最小高度 */
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Digital-7', 'Roboto Mono', monospace;
-  padding: 1rem 0;  /* 增加上下内边距 */
-  margin: 2rem 0;   /* 添加上下外边距 */
+  padding: 0;  /* 移除内边距 */
+  margin: 0;   /* 移除外边距 */
 }
 
 .split-flap-container {
   display: flex;
   gap: 4px;
-  padding: 20px;  /* 减小内边距 */
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 40px rgba(0,0,0,0.3);
   background: #000000;
   border: 3px solid #333;
+  width: 90%;  /* 设置容器宽度为90% */
+  max-width: 1200px;  /* 设置最大宽度 */
+  margin: 0 auto;  /* 居中显示 */
 }
 
 .split-flap-digit {
-  width: 80px;   /* 增加宽度 */
-  height: 120px; /* 增加高度 */
+  width: calc(100% / 11);  /* 根据卡片数量计算宽度 */
+  aspect-ratio: 0.6;  /* 保持宽高比 */
   position: relative;
   background: #000000;
   border-radius: 6px;
@@ -181,10 +184,10 @@
   justify-content: center;
   align-items: center;
   color: #FFFFFF;
-  font-size: 4.5rem;  /* 增加字体大小 */
+  font-size: clamp(2rem, 4vw, 4.5rem);  /* 使用clamp实现响应式字体大小 */
   font-weight: bold;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  line-height: 120px;  /* 调整行高以匹配新的高度 */
+  line-height: 1;
 }
 
 .split-flap-top .char-display {
@@ -247,5 +250,29 @@
 @font-face {
   font-family: 'Digital-7';
   src: url('/fonts/digital-7.mono.ttf') format('truetype');
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .split-flap-container {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .split-flap-digit {
+    aspect-ratio: 0.5;  /* 在小屏幕上调整宽高比 */
+  }
+}
+
+@media (max-width: 480px) {
+  .split-flap-container {
+    width: 98%;
+    padding: 10px;
+    gap: 2px;
+  }
+  
+  .split-flap-digit {
+    aspect-ratio: 0.4;  /* 在更小的屏幕上进一步调整宽高比 */
+  }
 }
 

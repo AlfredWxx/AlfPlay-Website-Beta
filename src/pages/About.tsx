@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import FlipCardSection from '../components/FlipCardSection';
 
 export default function About() {
@@ -6,7 +7,7 @@ export default function About() {
     <div className="min-h-screen">
       {/* Hero Section with Background */}
       <div 
-        className="h-[78vh] bg-gray-500 flex items-center relative"
+        className="h-[85vh] bg-gray-500 flex items-center relative"
       >
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
@@ -18,6 +19,20 @@ export default function About() {
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white drop-shadow-lg">
             Learn about our mission to make learning fun and exciting
           </p>
+        </div>
+      </div>
+
+      {/* Navigation Breadcrumb */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex items-center justify-left space-x-2">
+          <Link 
+            to="/" 
+            className="text-gray-600 hover:text-alfblue hover:underline transition-colors duration-300"
+          >
+            Home
+          </Link>
+          <span className="text-alfblue">-</span>
+          <span className="text-gray-600">About</span>
         </div>
       </div>
 
