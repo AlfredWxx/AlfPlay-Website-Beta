@@ -1,4 +1,5 @@
 import React from 'react';
+import FlipCardSection from '../components/FlipCardSection';
 
 export default function About() {
   return (
@@ -19,6 +20,9 @@ export default function About() {
           </p>
         </div>
       </div>
+
+      {/* Flip Card Section */}
+      <FlipCardSection />
 
       {/* Introduction Section */}
       <div className="py-16 bg-white">

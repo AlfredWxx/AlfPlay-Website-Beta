@@ -46,3 +46,206 @@
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-out forwards;
 }
+
+/* 翻牌卡片样式 */
+.flip-card {
+  perspective: 1000px;
+  background-color: transparent;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.flip-card-back {
+  transform: rotateX(180deg);
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* 添加翻转时的阴影效果 */
+.flip-card-inner {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.6s, box-shadow 0.6s;
+}
+
+.flip-card.flipped .flip-card-inner {
+  box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+}
+
+/* 添加翻转时的景深效果 */
+.flip-card-front,
+.flip-card-back {
+  transform-style: preserve-3d;
+}
+
+/* 翻片显示器样式 */
+.split-flap-display {
+  min-height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Digital-7', 'Roboto Mono', monospace;
+  padding: 1rem 0;  /* 增加上下内边距 */
+  margin: 2rem 0;   /* 添加上下外边距 */
+}
+
+.split-flap-container {
+  display: flex;
+  gap: 4px;
+  padding: 20px;  /* 减小内边距 */
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+  background: #000000;
+  border: 3px solid #333;
+}
+
+.split-flap-digit {
+  width: 80px;   /* 增加宽度 */
+  height: 120px; /* 增加高度 */
+  position: relative;
+  background: #000000;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+  border: 1px solid #444;
+  perspective: 1000px;
+}
+
+.split-flap-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.split-flap-top,
+.split-flap-bottom,
+.split-flap-next {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: #000000;
+  overflow: hidden;
+}
+
+.split-flap-top {
+  top: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom: 2px solid #333;  /* 加粗分隔线 */
+  transform-origin: bottom;
+}
+
+.split-flap-bottom {
+  bottom: 0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top: 2px solid #333;  /* 加粗分隔线 */
+}
+
+.split-flap-next {
+  top: 0;
+  transform-origin: bottom;
+  transform: rotateX(180deg);
+}
+
+.char-display {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 4.5rem;  /* 增加字体大小 */
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  line-height: 120px;  /* 调整行高以匹配新的高度 */
+}
+
+.split-flap-top .char-display {
+  top: 0;
+}
+
+.split-flap-bottom .char-display {
+  bottom: 0;
+}
+
+.split-flap-next .char-display {
+  top: 0;
+}
+
+/* 轮转动画效果 */
+.split-flap-card.wheeling .split-flap-top {
+  animation: wheelRotate 0.05s linear infinite;
+}
+
+@keyframes wheelRotate {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+
+/* 添加机械感效果 */
+.split-flap-card.wheeling {
+  animation: mechanicalShake 0.05s linear infinite;
+}
+
+@keyframes mechanicalShake {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-0.5px);
+  }
+  75% {
+    transform: translateY(0.5px);
+  }
+}
+
+/* 添加噪点效果 */
+.split-flap-digit::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* 添加字符切分效果 */
+@font-face {
+  font-family: 'Digital-7';
+  src: url('/fonts/digital-7.mono.ttf') format('truetype');
+}
+
