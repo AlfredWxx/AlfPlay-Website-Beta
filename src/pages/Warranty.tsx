@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ContactSection from '../components/ContactSection';
 
-export default function Contact() {
+export default function Warranty() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Background */}
@@ -14,10 +13,10 @@ export default function Contact() {
             Page Developing 🏋️‍♀️🏋️‍♀️
           </h1>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
-            Contact Alfplay
+            Alfplay Warranty
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white drop-shadow-lg">
-            We look forward to connecting with you and providing the best service and support
+            Learn about our warranty policy and how we ensure your satisfaction
           </p>
         </div>
       </div>
@@ -32,7 +31,7 @@ export default function Contact() {
             Home
           </Link>
           <span className="text-alfblue">-</span>
-          <span className="text-gray-600">Contact</span>
+          <span className="text-gray-600">Warranty</span>
         </div>
       </div>
 
@@ -41,17 +40,21 @@ export default function Contact() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-              Talk with an Alfplay Expert Today!
+              Our Commitment to Quality
             </h2>
             <p className="text-gray-600 mb-8">
-              Whether you have questions, suggestions, or partnership opportunities, we're eager to hear from you. Our team will get back to you promptly with professional answers and support.
+              We stand behind the quality of our products and offer a comprehensive warranty to ensure your satisfaction.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Contact Section */}
-      <ContactSection />
+      {/* Warranty Content Section */}
+      <div className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          {/* Add your warranty content here */}
+        </div>
+      </div>
     </div>
   );
 } 

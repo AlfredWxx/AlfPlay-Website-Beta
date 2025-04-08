@@ -5,7 +5,7 @@ import ContactSection from '../components/ContactSection';
 import ShowcaseSection from '../components/ShowcaseSection';
 import FlipCardSection from '../components/FlipCardSection';
 import { useTranslation } from 'react-i18next';
-
+import ProductCarousel from '../components/ProductCarousel';
 export default function Home() {
   const navigate = useNavigate();
   const { t } = useTranslation('common');
@@ -19,72 +19,6 @@ export default function Home() {
       localStorage.setItem('hasSeenWelcome', 'true');
     }
   }, []);
-
-  const showcaseItems = [
-    {
-      id: 1,
-      title: t('home.products.p1title'),
-      description: t('home.products.p1description'),
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/products"
-    },
-    {
-      id: 2,
-      title: t('home.products.p2title'),
-      description: t('home.products.p2description'),
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/products"
-    },
-    {
-      id: 3,
-      title: t('home.products.p3title'),
-      description: t('home.products.p3description'),
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/products"
-    },
-    {
-      id: 4,
-      title: t('home.products.p4title'),
-      description: t('home.products.p4description'),
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/products"
-    },
-    {
-      id: 5,
-      title: t('home.products.p5title'),
-      description: t('home.products.p5description'),
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/products"
-    },
-    {
-      id: 6,
-      title: t('home.products.p6title'),
-      description: t('home.products.p6description'),
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/products"
-    },
-    {
-      id: 7,
-      title: t('home.products.p7title'),
-      description: t('home.products.p7description'),
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/products"
-    },
-    {
-      id: 8,
-      title: t('home.products.p8title'),
-      description: t('home.products.p8description'),
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/products"
-    },
-    {
-      id: 9,
-      title: t('home.products.p9title'),
-      description: t('home.products.p9description'),
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/products"
-    }
-  ];
 
   return (
     <div className="min-h-screen">
@@ -118,11 +52,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Products Section */}
-      <ShowcaseSection 
-        title={t('home.products.title')}
-        items={showcaseItems}
-      />
+      <ProductCarousel />
 
 
       {/* Contact Section */}

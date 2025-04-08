@@ -8,16 +8,18 @@ const COLORS = {
 
 const TIMING = {
   switchInterval: 5000,    // 整体切换间隔
-  animationDuration: 500,  // 动画时长
+  animationDuration: 800,  // 动画时长
   wheelSteps: 8           // 滚动步数
 };
 
 // 字符轮
 const CHAR_WHEEL = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!? ';
 
+
 interface SplitFlapProps {
   value: string;
   isAnimating: boolean;
+  delay: number; // 新增：翻动延迟
 }
 
 const DISPLAY_TEXTS = [
@@ -49,29 +51,31 @@ const getRandomChar = () => {
 };
 
 // 单个翻片组件
-const SplitFlap: React.FC<SplitFlapProps> = ({ value, isAnimating }) => {
+const SplitFlap: React.FC<SplitFlapProps> = ({ value, isAnimating, delay }) => {
   const [displayValue, setDisplayValue] = useState(value);
   const [isWheeling, setIsWheeling] = useState(false);
 
   useEffect(() => {
     if (isAnimating) {
-      setIsWheeling(true);
-      
-      // 生成过渡字符序列
-      const chars = Array(TIMING.wheelSteps).fill(null).map(() => getRandomChar());
-      chars.push(value);
-
-      // 逐个显示过渡字符
-      chars.forEach((char, index) => {
-        setTimeout(() => {
-          setDisplayValue(char);
-          if (index === chars.length - 1) {
-            setIsWheeling(false);
-          }
-        }, (TIMING.animationDuration / chars.length) * index);
-      });
+      setTimeout(() => {
+        setIsWheeling(true);
+  
+        const chars = Array(TIMING.wheelSteps).fill(null).map(() => getRandomChar());
+        chars.push(value);
+  
+        chars.forEach((char, index) => {
+          setTimeout(() => {
+            setDisplayValue(char);
+            if (index === chars.length - 1) {
+              setIsWheeling(false);
+            }
+          }, (TIMING.animationDuration / chars.length) * index);
+        });
+  
+      }, delay); // 👈 加入延迟
     }
-  }, [value, isAnimating]);
+  }, [value, isAnimating, delay]);
+  
 
   return (
     <div className="split-flap-digit">
@@ -91,7 +95,7 @@ const SplitFlap: React.FC<SplitFlapProps> = ({ value, isAnimating }) => {
 const FlipCardSection: React.FC = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [hasStarted, setHasStarted] = useState(false);
+  const [hasStarted, setHasStarted] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -129,13 +133,17 @@ const FlipCardSection: React.FC = () => {
 
       // 设置后续的定时切换
       intervalId = setInterval(() => {
+        setCurrentTextIndex((prev) => {
+          const nextIndex = (prev + 1) % DISPLAY_TEXTS.length;
+          return nextIndex;
+        });
         setIsAnimating(true);
         setTimeout(() => {
-          setCurrentTextIndex((prev) => (prev + 1) % DISPLAY_TEXTS.length);
           setIsAnimating(false);
         }, TIMING.animationDuration);
       }, TIMING.switchInterval);
     }, TIMING.animationDuration);
+
 
     return () => {
       clearInterval(intervalId);
@@ -148,19 +156,20 @@ const FlipCardSection: React.FC = () => {
   return (
     <div className="split-flap-display" ref={containerRef}>
       <div className="split-flap-container">
-        {Array(TOTAL_CARDS).fill(null).map((_, index) => {
-          const charIndex = index - startPos;
-          const value = charIndex >= 0 && charIndex < currentText.length 
-            ? currentText[charIndex] 
-            : '';
-          return (
-            <SplitFlap 
-              key={index} 
-              value={value} 
-              isAnimating={isAnimating} 
-            />
-          );
-        })}
+      {Array(TOTAL_CARDS).fill(null).map((_, index) => {
+        const charIndex = index - startPos;
+        const value = charIndex >= 0 && charIndex < currentText.length 
+          ? currentText[charIndex] 
+          : '';
+        return (
+          <SplitFlap 
+            key={index} 
+            value={value} 
+            isAnimating={isAnimating} 
+            delay={Math.random() * 800}
+          />
+        );
+      })}
       </div>
     </div>
   );

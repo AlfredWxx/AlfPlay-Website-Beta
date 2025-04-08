@@ -1,0 +1,111 @@
+.product-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .product-cards-wrapper {
+    display: flex;
+    width: 80%;
+    overflow: hidden;
+  }
+  
+  .product-cards {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card {
+    flex: 0 0 33.33%; /* 每个卡片占三分之一宽度 */
+    box-sizing: border-box;
+    padding: 30px;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05); /* 鼠标悬停时卡片稍微放大 */
+  }
+  
+  .product-card-content {
+    display: flex;
+    flex-direction: column; /* 卡片内容竖直排列 */
+    align-items: center;
+  }
+  
+  .product-card-img {
+    width: 80%; /* 图片缩小，避免图片太大 */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .product-card-title {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .product-card-description {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+    padding: 0 10px;
+  }
+  
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;  /* 白色背景 */
+    color: black;  /* alfblue文字 */
+    border: 3px solid #ececec;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    width: 40px;  /* 固定宽度 */
+    height: 40px;  /* 固定高度 */
+    border-radius: 50%;  /* 圆形 */
+    display: flex;  /* 使用flex布局 */
+    align-items: center;  /* 垂直居中 */
+    justify-content: center;  /* 水平居中 */
+    transition: all 0.3s ease;  /* 添加过渡效果 */
+  }
+  
+  .carousel-button:hover {
+    background: #7cc4c4;  /* alfblue背景 */
+    color: white;  /* 白色文字 */
+  }
+  
+  .carousel-button.left {
+    left: 10px;
+  }
+  
+  .carousel-button.right {
+    right: 10px;
+  }
+  
+  .carousel-button.hidden {
+    display: none;
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    .product-card {
+      flex: 0 0 50%; /* 在中等屏幕下每个卡片占一半宽度 */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-card {
+      flex: 0 0 100%; /* 在手机屏幕下每个卡片占全宽 */
+    }
+  }
+  

@@ -13,6 +13,8 @@ import Products from './pages/Products';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Catalog from './pages/Catalog';
+import Warranty from './pages/Warranty';
+import ExamplePage from './pages/ExamplePage';
 import { LanguageProvider } from './contexts/LanguageContext';
 
 // 创建一个新的组件来处理滚动行为
@@ -133,6 +135,8 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/catalog" element={<Catalog />} />
+              <Route path="/warranty" element={<Warranty />} />
+              <Route path="/example" element={<ExamplePage />} />
             </Routes>
           </main>
           <Footer />

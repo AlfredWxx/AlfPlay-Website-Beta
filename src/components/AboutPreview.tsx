@@ -21,7 +21,7 @@ export default function AboutPreview({ isVisible, onMouseLeave }: AboutPreviewPr
             <div className="space-y-4">
               <Link to="/contact" className="block text-1xl font-bold text-gray-800 hover:underline">{t('header.preview.left-button1')}</Link> 
               <Link to="/catalog" className="block text-1xl font-bold text-gray-800 hover:underline">{t('header.preview.left-button2')}</Link> 
-              <Link to="/catalog" className="block text-1xl font-bold text-gray-800 hover:underline">{t('header.preview.left-button3')}</Link> 
+              <Link to="/warranty" className="block text-1xl font-bold text-gray-800 hover:underline">{t('header.preview.left-button3')}</Link> 
             </div>
           </div>
           <div className="space-y-6 animate-fadeIn">  

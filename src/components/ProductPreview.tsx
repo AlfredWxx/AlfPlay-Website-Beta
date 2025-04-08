@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -9,12 +9,35 @@ interface ProductPreviewProps {
 
 export default function ProductPreview({ isVisible, onMouseLeave }: ProductPreviewProps) {
   const { t } = useTranslation('common');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isVisible) {
+        onMouseLeave();
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isVisible, onMouseLeave]);
+
   return (
     <div 
-      className={`fixed top-18 left-0 w-full bg-white shadow-lg transform transition-all duration-300 ease-in-out pointer-events-none opacity-0 z-30 ${
-        isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0'
+      className={`fixed top-[72px] left-0 w-full bg-white shadow-lg transform transition-all duration-300 ease-out pointer-events-none opacity-0 z-30 ${
+        isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-1 opacity-0'
       }`}
       onMouseLeave={onMouseLeave}
+      style={{
+        position: 'fixed',
+        top: '72px',
+        left: 0,
+        right: 0,
+        zIndex: 30,
+        transformOrigin: 'top',
+        transition: 'transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s cubic-bezier(0.2, 0.8, 0.2, 1)'
+      }}
     >
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -22,7 +45,7 @@ export default function ProductPreview({ isVisible, onMouseLeave }: ProductPrevi
             <div className="space-y-4">
               <Link to="/contact" className="block text-1xl font-bold text-gray-800 hover:underline">{t('header.preview.left-button1')}</Link> 
               <Link to="/catalog" className="block text-1xl font-bold text-gray-800 hover:underline">{t('header.preview.left-button2')}</Link> 
-              <Link to="/catalog" className="block text-1xl font-bold text-gray-800 hover:underline">{t('header.preview.left-button3')}</Link> 
+              <Link to="/example" className="block text-1xl font-bold text-gray-800 hover:underline">{t('header.preview.left-button3')}</Link> 
             </div>
           </div>
           <div className="space-y-6 animate-fadeIn">
