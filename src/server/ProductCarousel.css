@@ -6,18 +6,18 @@
     overflow: hidden;
     width: 100%;
   }
-  
+
   .product-cards-wrapper {
     display: flex;
     width: 80%;
     overflow: hidden;
   }
-  
+
   .product-cards {
     display: flex;
     transition: transform 0.3s ease;
   }
-  
+
   .product-card {
     flex: 0 0 33.33%; /* 每个卡片占三分之一宽度 */
     box-sizing: border-box;
@@ -28,37 +28,37 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
   }
-  
+
   .product-card:hover {
     transform: scale(1.05); /* 鼠标悬停时卡片稍微放大 */
   }
-  
+
   .product-card-content {
     display: flex;
     flex-direction: column; /* 卡片内容竖直排列 */
     align-items: center;
   }
-  
+
   .product-card-img {
     width: 80%; /* 图片缩小，避免图片太大 */
     height: auto;
     object-fit: cover;
     border-radius: 8px;
   }
-  
+
   .product-card-title {
     font-size: 18px;
     margin-top: 10px;
     font-weight: bold;
   }
-  
+
   .product-card-description {
     font-size: 14px;
     color: #555;
     margin-top: 5px;
     padding: 0 10px;
   }
-  
+
   .carousel-button {
     position: absolute;
     top: 50%;
@@ -78,34 +78,106 @@
     justify-content: center;  /* 水平居中 */
     transition: all 0.3s ease;  /* 添加过渡效果 */
   }
-  
+
   .carousel-button:hover {
     background: #7cc4c4;  /* alfblue背景 */
     color: white;  /* 白色文字 */
   }
-  
+
   .carousel-button.left {
     left: 10px;
   }
-  
+
   .carousel-button.right {
     right: 10px;
   }
-  
+
   .carousel-button.hidden {
     display: none;
   }
-  
+
   /* 响应式设计 */
   @media (max-width: 768px) {
+    .product-carousel {
+      padding: 0 5px;
+    }
+
+    .product-cards-wrapper {
+      width: 90%;
+    }
+
     .product-card {
       flex: 0 0 50%; /* 在中等屏幕下每个卡片占一半宽度 */
+      padding: 15px;
+    }
+
+    .carousel-button {
+      width: 36px;
+      height: 36px;
+      font-size: 20px;
+    }
+
+    .carousel-button.left {
+      left: 5px;
+    }
+
+    .carousel-button.right {
+      right: 5px;
+    }
+
+    .product-card-title {
+      font-size: 16px;
+    }
+
+    .product-card-description {
+      font-size: 13px;
     }
   }
-  
+
   @media (max-width: 480px) {
+    .product-carousel {
+      padding: 0;
+    }
+
+    .product-cards-wrapper {
+      width: 95%;
+    }
+
     .product-card {
       flex: 0 0 100%; /* 在手机屏幕下每个卡片占全宽 */
+      padding: 10px;
+    }
+
+    .carousel-button {
+      width: 32px;
+      height: 32px;
+      font-size: 18px;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .carousel-button.left {
+      left: 2px;
+    }
+
+    .carousel-button.right {
+      right: 2px;
+    }
+
+    /* 添加触摸滑动指示器 */
+    .product-carousel::after {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 4px;
+      background-color: rgba(124, 196, 196, 0.5);
+      border-radius: 2px;
     }
   }
-  
+
+  /* 添加触摸反馈效果 */
+  .product-card:active {
+    transform: scale(0.98);
+  }

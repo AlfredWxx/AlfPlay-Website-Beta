@@ -1,6 +1,7 @@
 {
   "header": {
     "nav": {
+      "home": "Home",
       "products": "Products",
       "planning": "Planning",
       "about": "About",
@@ -73,7 +74,7 @@
     "description": "Discover our innovative educational toys that inspire creativity and learning",
     "button": "Explore Products",
     "products": {
-      "title": "Explore Our Newest Products",
+      "title": "Explore Our Latest Products",
       "p1title" : "Product 1",
       "p1description" : "Description 1",
       "p2title" : "Product 2",
@@ -117,4 +118,4 @@
     "error": "Sorry, there was an error sending your message. Please try again."
   }
 
-} 
+}

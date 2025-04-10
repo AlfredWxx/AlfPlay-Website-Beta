@@ -1,6 +1,7 @@
 {
     "header": {
       "nav": {
+        "home": "Accueil",
         "products": "Produits",
         "planning": "Planification",
         "about": "À propos",
@@ -99,7 +100,7 @@
         "creative": "Jouets créatifs et éducatifs"
       },
       "home_products": {
-        "title": "Nos produits",  
+        "title": "Nos produits",
         "description": "Découvrez nos jouets éducatifs innovants qui inspirent la créativité et l'apprentissage"
       }
     },
@@ -125,4 +126,4 @@
       "success": "Merci pour votre message ! Nous vous répondrons bientôt.",
       "error": "Désolé, une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer."
     }
-  } 
+  }
