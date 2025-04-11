@@ -1,0 +1,439 @@
+/* 产品展示组件 */
+.product-showcase {
+  margin: 3rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+  width: 96vw; /* 占捠96%的视口宽度 */
+  max-width: 1800px; /* 最大宽度限制 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.showcase-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #333;
+  position: relative;
+}
+
+.showcase-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #7cc4c4; /* alfblue */
+  border-radius: 2px;
+}
+
+/* 展示容器 */
+.showcase-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0 80px; /* 增加导航按钮的空间 */
+  padding-left: 90px; /* 增加左侧的空间，为倾斜卡片提供更多空间 */
+  /* 默认隐藏导航按钮 */
+}
+
+/* 当鼠标悬停在容器上时显示导航按钮 */
+.showcase-container:hover .showcase-nav {
+  opacity: 1;
+}
+
+/* 滚动区域 */
+.showcase-track {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 30px 0; /* 增加上下的padding */
+  margin: 10px 0; /* 添加上下的margin */
+}
+
+/* 滚动内容 */
+.showcase-slides {
+  display: flex;
+  will-change: transform;
+  padding: 0;
+  margin: 0 -2%; /* 补偿卡片的padding */
+  padding-left: 15px; /* 增加左侧的空间，防止倾斜卡片被容器边缘遮挡 */
+}
+
+/* 产品卡片 */
+.product-card {
+  padding: 0 2%; /* 增加卡片间距 */
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  height: 650px; /* 增加卡片高度 */
+  perspective: 1000px; /* 添加3D透视效果 */
+  box-sizing: border-box;
+  margin: 10px 0; /* 添加上下的margin */
+}
+
+/* 卡片内容 */
+.product-card-inner {
+  height: 100%;
+  background: white;
+  border-radius: 4px; /* 拍立得风格的圆角更小 */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  transform: rotate(-1deg); /* 轻微倾斜，增加拍立得感 */
+  transform-origin: center center; /* 确保旋转以卡片中心为基准 */
+  border: 10px solid white; /* 白色边框，模拟拍立得的白边 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 非常轻微的阴影 */
+}
+
+.product-card:hover .product-card-inner {
+  transform: rotate(0deg) translateY(-8px); /* 悬停时变正并上浮 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* 悬停时的轻微阴影 */
+}
+
+/* 图片容器 */
+.product-image-container {
+  position: relative;
+  padding-top: 100%; /* 正方形，更像拍立得照片 */
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* 年龄范围标签 */
+.product-age-range {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: rgba(124, 196, 196, 0.9); /* alfblue with opacity */
+  color: white;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 2;
+}
+
+/* 内容区 */
+.product-content {
+  padding: 20px 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  text-align: center; /* 文字居中，更像拍立得照片下方的文字 */
+}
+
+.product-category {
+  font-size: 0.85rem;
+  color: #7cc4c4; /* alfblue */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.product-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+  line-height: 1.3;
+}
+
+.product-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  flex-grow: 1;
+  font-style: italic; /* 斜体，增加手写感 */
+}
+
+/* 导航按钮 */
+.showcase-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px; /* 增大按钮尺寸 */
+  height: 60px; /* 增大按钮尺寸 */
+  border-radius: 50%;
+  background: #7cc4c4; /* alfblue */
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* 默认隐藏按钮 */
+  opacity: 0;
+}
+
+.showcase-nav:hover {
+  background: #5aa6a6; /* darker alfblue */
+  transform: translateY(-50%) scale(1.05);
+}
+
+.showcase-nav-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.showcase-nav-disabled:hover {
+  background: #7cc4c4;
+  transform: translateY(-50%);
+}
+
+.showcase-prev {
+  left: 15px; /* 将按钮移到容器外侧 */
+}
+
+.showcase-next {
+  right: 15px; /* 将按钮移到容器外侧 */
+}
+
+.nav-icon {
+  width: 32px; /* 增大图标尺寸 */
+  height: 32px; /* 增大图标尺寸 */
+}
+
+/* 拍立得风格 */
+.polaroid {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.polaroid:before {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 50%;
+}
+
+/* 响应式样式 */
+@media (max-width: 1600px) {
+  .product-showcase {
+    width: 98vw;
+  }
+
+  .product-card {
+    height: 600px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .product-showcase {
+    width: 100vw;
+  }
+
+  .product-card {
+    height: 550px;
+  }
+
+  .product-card-inner {
+    border-width: 8px;
+  }
+
+  .product-title {
+    font-size: 1.2rem;
+  }
+
+  .product-description {
+    font-size: 0.95rem;
+  }
+
+  .showcase-container {
+    padding: 0 70px;
+    padding-left: 80px; /* 调整小屏幕上的左侧空间 */
+  }
+
+  .showcase-prev {
+    left: 0;
+  }
+
+  .showcase-next {
+    right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .product-card {
+    height: 500px;
+  }
+
+  .product-card-inner {
+    border-width: 7px;
+  }
+
+  .product-content {
+    padding: 15px 12px;
+  }
+
+  .product-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .product-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .showcase-nav {
+    width: 50px;
+    height: 50px;
+  }
+
+  .nav-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .showcase-container {
+    padding: 0 60px;
+    padding-left: 70px; /* 调整小屏幕上的左侧空间 */
+  }
+
+  .showcase-slides {
+    padding-left: 10px; /* 调整小屏幕上的左侧空间 */
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-container {
+    padding: 0 50px;
+    padding-left: 50px; /* 小屏幕上左右padding对称 */
+  }
+
+  .product-card {
+    height: 450px;
+    padding: 0 1.5%;
+  }
+
+  .product-card-inner {
+    border-width: 6px;
+    transform: rotate(0deg); /* 小屏幕不倾斜 */
+  }
+
+  .showcase-slides {
+    padding-left: 0; /* 小屏幕上不需要额外的左侧空间，因为卡片不倾斜 */
+  }
+
+  .product-content {
+    padding: 12px 10px;
+  }
+
+  .product-category {
+    font-size: 0.8rem;
+  }
+
+  .product-title {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .product-description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .showcase-nav {
+    width: 44px;
+    height: 44px;
+    opacity: 1; /* 小屏幕上始终显示按钮 */
+  }
+
+  .nav-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .showcase-track {
+    padding: 20px 0;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .showcase-container {
+    padding: 0 40px;
+  }
+
+  .product-card {
+    height: 400px;
+    padding: 0 10px;
+  }
+
+  .product-card-inner {
+    border-width: 5px;
+  }
+
+  .product-content {
+    padding: 10px 8px;
+  }
+
+  .product-category {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+  }
+
+  .product-title {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+  }
+
+  .product-description {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .showcase-nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .showcase-prev {
+    left: 5px;
+  }
+
+  .showcase-next {
+    right: 5px;
+  }
+}

@@ -95,6 +95,102 @@
       "p9description" : "Description 9"
     }
   },
+  "productShowcase": {
+    "viewDetails": "View Details",
+    "prevButton": "View previous products",
+    "nextButton": "View next products",
+    "goToPage": "Go to page {{page}}"
+  },
+  "homeSlogan": {
+    "title": "Innovative Play Solutions for Every Space",
+    "subtitle": "Creating engaging and safe play environments that inspire creativity, learning, and fun for children of all ages.",
+    "primaryButton": "Explore Products",
+    "secondaryButton": "Contact Us"
+  },
+  "whatWeCanDo": {
+    "title": "What We Can Do",
+    "subtitle": "We offer comprehensive solutions for play spaces, from design to installation and maintenance.",
+    "service1": {
+      "title": "Custom Design",
+      "description": "Tailored play solutions designed to fit your specific space, budget, and community needs."
+    },
+    "service2": {
+      "title": "Professional Installation",
+      "description": "Expert installation teams ensuring safety, quality, and compliance with all regulations."
+    },
+    "service3": {
+      "title": "Maintenance & Support",
+      "description": "Ongoing maintenance services to keep your play equipment safe and in optimal condition."
+    },
+    "service4": {
+      "title": "Consultation Services",
+      "description": "Expert advice on playground planning, safety standards, and inclusive design."
+    }
+  },
+  "catalog": {
+    "title": "Our Product Catalog",
+    "subtitle": "Browse our extensive range of high-quality play equipment and solutions.",
+    "viewMore": "View More",
+    "browseAll": "Browse All Products",
+    "category1": {
+      "title": "Outdoor Playgrounds",
+      "description": "Durable and engaging outdoor play structures for parks, schools, and communities."
+    },
+    "category2": {
+      "title": "Indoor Play Equipment",
+      "description": "Creative and safe play solutions designed specifically for indoor environments."
+    },
+    "category3": {
+      "title": "Inclusive Play Solutions",
+      "description": "Accessible play equipment designed for children of all abilities and needs."
+    }
+  },
+  "customerCase": {
+    "title": "Customer Success Stories",
+    "subtitle": "See how our solutions have transformed spaces and communities around the world.",
+    "viewAllCases": "View All Case Studies",
+    "case1": {
+      "customer": "Greenfield Elementary School",
+      "title": "School Playground Renovation",
+      "description": "A complete transformation of an outdated playground into a modern, safe, and engaging play space for 500+ students."
+    },
+    "case2": {
+      "customer": "Oakridge Community Center",
+      "title": "Inclusive Community Playground",
+      "description": "Creating an accessible playground that welcomes children of all abilities, becoming a centerpiece of the community."
+    },
+    "case3": {
+      "customer": "Sunshine Daycare Center",
+      "title": "Indoor Play Area Design",
+      "description": "A custom-designed indoor play space that maximizes limited area while providing diverse play opportunities."
+    }
+  },
+  "onlineShop": {
+    "title": "Shop Online",
+    "subtitle": "Discover our selection of ready-to-ship play equipment and accessories.",
+    "visitShop": "Visit Our Shop",
+    "newLabel": "New",
+    "product1": {
+      "name": "Adventure Climber Set",
+      "price": "$1,299.99",
+      "category": "Outdoor Equipment"
+    },
+    "product2": {
+      "name": "Balance Beam Course",
+      "price": "$549.99",
+      "category": "Physical Development"
+    },
+    "product3": {
+      "name": "Sensory Play Panel",
+      "price": "$399.99",
+      "category": "Inclusive Play"
+    },
+    "product4": {
+      "name": "Musical Play Station",
+      "price": "$799.99",
+      "category": "Creative Play"
+    }
+  },
   "contactform": {
     "title": "Contact Us",
     "subtitle": {

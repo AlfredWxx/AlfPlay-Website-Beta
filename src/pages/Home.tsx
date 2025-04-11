@@ -1,11 +1,14 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Star, Users, Award, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import ContactSection from '../components/ContactSection';
-import ShowcaseSection from '../components/ShowcaseSection';
-import FlipCardSection from '../components/FlipCardSection';
 import { useTranslation } from 'react-i18next';
-import ProductCarousel from '../components/ProductCarousel';
+import ProductShowcase from '../components/ProductShowcase';
+import HomeSlogan from '../components/HomeSlogan';
+import WhatWeCanDo from '../components/WhatWeCanDo';
+import Catalog from '../components/Catalog';
+import CustomerCase from '../components/CustomerCase';
+import OnlineShop from '../components/OnlineShop';
 export default function Home() {
   const navigate = useNavigate();
   const { t } = useTranslation('common');
@@ -55,15 +58,25 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 产品轮播部分 */}
-      <div className="py-8 sm:py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-10">
-            {t('home.products.title')}
-          </h2>
-          <ProductCarousel />
-        </div>
+      {/* Home Slogan Section */}
+      <HomeSlogan />
+
+      {/* What We Can Do Section */}
+      <WhatWeCanDo />
+
+      {/* 产品展示部分 - 使用新的ProductShowcase组件 */}
+      <div className="py-8 sm:py-12 md:py-16 bg-white w-full overflow-hidden">
+        <ProductShowcase title={t('home.products.title')} />
       </div>
+
+      {/* Catalog Section */}
+      <Catalog />
+
+      {/* Customer Case Section */}
+      <CustomerCase />
+
+      {/* Online Shop Section */}
+      <OnlineShop />
 
       {/* Contact Section */}
       <ContactSection />

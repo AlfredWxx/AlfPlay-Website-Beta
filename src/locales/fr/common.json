@@ -104,6 +104,12 @@
         "description": "Découvrez nos jouets éducatifs innovants qui inspirent la créativité et l'apprentissage"
       }
     },
+    "productShowcase": {
+      "viewDetails": "Voir les détails",
+      "prevButton": "Voir les produits précédents",
+      "nextButton": "Voir les produits suivants",
+      "goToPage": "Aller à la page {{page}}"
+    },
     "contactform": {
       "title": "Contactez-nous",
       "subtitle": {

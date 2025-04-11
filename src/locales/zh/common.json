@@ -104,6 +104,12 @@
       "description": "发现我们的创新教育玩具，激发创造力和学习"
     }
   },
+  "productShowcase": {
+    "viewDetails": "查看详情",
+    "prevButton": "查看上一页产品",
+    "nextButton": "查看下一页产品",
+    "goToPage": "转到第{{page}}页"
+  },
   "contactform": {
     "title": "联系我们",
     "subtitle": {
