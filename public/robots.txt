@@ -1,3 +1,13 @@
+# AlfPlay.com Robots.txt
+# 最后更新: 2024-05-01
+
+# 允许所有搜索引擎爬取
 User-agent: *
 Allow: /
-Sitemap: https://alfplay.com/sitemap.xml 
+
+# 禁止爬取某些特定路径（如果有需要，取消注释并添加路径）
+# Disallow: /admin/
+# Disallow: /private/
+
+# 指定Sitemap位置
+Sitemap: https://alfplay.com/sitemap.xml
