@@ -21,53 +21,6 @@
   line-height: 1.2;
 }
 
-.slogan-subtitle {
-  font-size: 1.5rem;
-  color: #666;
-  max-width: 800px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.6;
-}
-
-.slogan-cta {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.slogan-button {
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-}
-
-.slogan-button.primary {
-  background-color: #7cc4c4; /* alfblue */
-  color: white;
-}
-
-.slogan-button.primary:hover {
-  background-color: #6ab3b3;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.slogan-button.secondary {
-  background-color: transparent;
-  color: #7cc4c4; /* alfblue */
-  border: 2px solid #7cc4c4;
-}
-
-.slogan-button.secondary:hover {
-  background-color: rgba(124, 196, 196, 0.1);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-}
 
 /* Responsive styles */
 @media (max-width: 992px) {
