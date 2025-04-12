@@ -45,17 +45,26 @@
     <meta name="generator" content="React" />
 
     <script>
-      window.axeptioSettings= {
-      clientId:"67f8e6af64970db39fae1e23",
-      cookiesVersion:"alfplay-en-EU",
+      window.axeptioSettings = {
+        clientId: "67f8e6af64970db39fae1e23",
+        cookiesVersion: "alfplay-en-EU-2",
+        googleConsentMode: {
+          default: {
+            analytics_storage: "denied",
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            wait_for_update: 500
+          }
+        }
       };
-      
-      (function(d,s) {
-      vart = d.getElementsByTagName(s)[0], e = d.createElement(s);
-      e.async = true; e.src = "//static.axept.io/sdk.js";
-      t.parentNode.insertBefore(e, t);
+       
+      (function(d, s) {
+        var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+        e.async = true; e.src = "//static.axept.io/sdk.js";
+        t.parentNode.insertBefore(e, t);
       })(document, "script");
-      </script>
+    </script>
       
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
