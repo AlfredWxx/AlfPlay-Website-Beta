@@ -236,7 +236,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({
                 onClick={() => handleProductClick(product.slug)}
                 style={{ width: `${cardSettings.width}%` }}
               >
-                <div className="product-card-inner polaroid">
+                <div className="product-card-inner">
                   <div className="product-image-container">
                     <img
                       src={product.imageUrl}

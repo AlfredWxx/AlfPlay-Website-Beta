@@ -71,7 +71,6 @@
   cursor: pointer;
   height: 650px; /* 增加卡片高度 */
   perspective: 1000px; /* 添加3D透视效果 */
-  box-sizing: border-box;
   margin: 10px 0; /* 添加上下的margin */
 }
 
@@ -86,13 +85,10 @@
   transition: all 0.3s ease;
   transform: rotate(-1deg); /* 轻微倾斜，增加拍立得感 */
   transform-origin: center center; /* 确保旋转以卡片中心为基准 */
-  border: 10px solid white; /* 白色边框，模拟拍立得的白边 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 非常轻微的阴影 */
 }
 
 .product-card:hover .product-card-inner {
   transform: rotate(0deg) translateY(-8px); /* 悬停时变正并上浮 */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* 悬停时的轻微阴影 */
 }
 
 /* 图片容器 */
@@ -216,26 +212,7 @@
   height: 32px; /* 增大图标尺寸 */
 }
 
-/* 拍立得风格 */
-.polaroid {
-  background-color: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding-bottom: 15px;
-  position: relative;
-}
-
-.polaroid:before {
-  content: '';
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 2px;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-radius: 50%;
-}
+/* 移除polaroid相关样式 */
 
 /* 响应式样式 */
 @media (max-width: 1600px) {
@@ -257,9 +234,7 @@
     height: 550px;
   }
 
-  .product-card-inner {
-    border-width: 8px;
-  }
+  /* 移除空的product-card-inner规则 */
 
   .product-title {
     font-size: 1.2rem;
@@ -288,9 +263,7 @@
     height: 500px;
   }
 
-  .product-card-inner {
-    border-width: 7px;
-  }
+  /* 移除空的product-card-inner规则 */
 
   .product-content {
     padding: 15px 12px;
@@ -338,7 +311,6 @@
   }
 
   .product-card-inner {
-    border-width: 6px;
     transform: rotate(0deg); /* 小屏幕不倾斜 */
   }
 
@@ -396,9 +368,7 @@
     padding: 0 10px;
   }
 
-  .product-card-inner {
-    border-width: 5px;
-  }
+  /* 移除空的product-card-inner规则 */
 
   .product-content {
     padding: 10px 8px;
